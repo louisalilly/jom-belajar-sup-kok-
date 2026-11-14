@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Laman Baharu</title>
+<!-- Fon: Fredoka (tajuk) dan Nunito (teks). Perlu internet; jika tiada, fon biasa digunakan. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="semua">
+
+<div class="layout">
+
+  <nav id="nav">
+    <button data-tab="induksi" class="active">Set Induksi</button>
+    <button data-tab="l1">Langkah 1</button>
+    <button data-tab="l2">Langkah 2</button>
+    <button data-tab="l3">Langkah 3</button>
+    <button data-tab="susun">Aktiviti Pengukuhan</button>
+    <button data-tab="penutup">Penutup</button>
+  </nav>
+
+  <main>
+    <section id="induksi" class="active">
+
+      <!-- Halaman depan: gambar + butang Mula -->
+      <div id="hero" class="hero">
+        <div class="hero-stage">
+          <!-- Video latar. Gambar hero.png dipaparkan semasa video dimuatkan
+               (atau jika hero.mp4 tiada). -->
+          <video class="hero-bg" src="hero.mp4" poster="hero.png"
+                 autoplay muted loop playsinline preload="auto"
+                 aria-label="Jom belajar SuP (KOK)"></video>
+          <button id="btn-mula" class="hero-btn" aria-label="Mula">
+            <img src="mula-btn.png" alt="">
+          </button>
+        </div>
+      </div>
+
+      <!-- Aktiviti induksi (muncul selepas butang Mula ditekan) -->
+      <div id="induksi-aktiviti" hidden>
+        <!-- Latar belakang seluruh halaman (kekal di tempatnya semasa murid skrol).
+             Komputer: induksi-bg.png   |   Telefon (pilihan): induksi-bg-hp.png
+             Jika gambar tiada, latar merah-emas dipaparkan.
+             Apabila video latar siap, gantikan dua <img> di bawah dengan:
+             <video class="bg-media" src="induksi-bg.mp4" autoplay muted loop playsinline></video> -->
+        <div class="bg-layer" id="bg-layer">
+          <img class="bg-media bg-pc" src="induksi-bg.png" alt=""
+               onerror="this.remove()">
+          <img class="bg-media bg-hp" src="induksi-bg-hp.png" alt=""
+               onerror="this.parentNode.classList.add('tiada-hp');this.remove()">
+        </div>
+
+        <div class="wrap bg-content">
+
+          <p class="pill">Tonton kedua-dua video ini dengan teliti. Perhatikan ayat-ayat yang digunakan. 👀</p>
+
+          <!-- VIDEO 1 (induksi.mp4). Video dalam bingkai. Simpan bingkai (PNG, bahagian tengah
+               lutsinar) sebagai video-frame.png. Jika tiada, bingkai merah-emas dipaparkan. -->
+          <div class="vblok" id="vblok1">
+            <p class="pill vlabel">Video 1</p>
+            <div class="vwrap">
+              <div class="video-frame">
+                <video class="vid" src="induksi.mp4" playsinline preload="metadata"></video>
+                <img class="frame-img" src="video-frame.png" alt=""
+                     onerror="this.parentNode.classList.add('tiada');this.remove()">
+              </div>
+              <!-- Kawalan video (di bawah bingkai supaya tidak terlindung) -->
+              <div class="vctl pill">
+                <button class="vplay" aria-label="Main / jeda">▶</button>
+                <input type="range" class="vseek" min="0" max="1000" value="0" aria-label="Kedudukan video">
+                <span class="vtime">0:00</span>
+                <button class="vplay vbesar" aria-label="Besarkan video">⛶</button>
+              </div>
+            </div>
+            <p class="pill muted vfallback" hidden>
+              Video 1 belum tersedia atau tidak dapat dimainkan.
+              <button class="link-btn vlangkau">Teruskan</button>
+            </p>
+          </div>
+
+          <!-- VIDEO 2 (induksi2.mp4). Muncul selepas Video 1 tamat. -->
+          <div class="vblok" id="vblok2" hidden>
+            <p class="pill vlabel">Video 2</p>
+            <div class="vwrap">
+              <div class="video-frame">
+                <video class="vid" src="induksi2.mp4" playsinline preload="metadata"></video>
+                <img class="frame-img" src="video-frame.png" alt=""
+                     onerror="this.parentNode.classList.add('tiada');this.remove()">
+              </div>
+              <div class="vctl pill">
+                <button class="vplay" aria-label="Main / jeda">▶</button>
+                <input type="range" class="vseek" min="0" max="1000" value="0" aria-label="Kedudukan video">
+                <span class="vtime">0:00</span>
+                <button class="vplay vbesar" aria-label="Besarkan video">⛶</button>
+              </div>
+            </div>
+            <p class="pill muted vfallback" hidden>
+              Video 2 belum tersedia atau tidak dapat dimainkan.
+              <button class="link-btn vlangkau">Teruskan ke soalan</button>
+            </p>
+          </div>
+
+          <!-- Soalan (muncul selepas kedua-dua video tamat).
+               Setiap soalan muncul selepas soalan sebelumnya dijawab dengan betul. -->
+          <div id="soalan" hidden>
+
+            <div class="card" id="q1" data-q="q1">
+              <h3>Soalan 1</h3>
+              <p class="soal">Berdasarkan video pertama, adakah ayat yang disampaikan mempunyai kesalahan struktur ayat?</p>
+              <div class="yt">
+                <button class="yt-btn" data-jwp="ya">Ya</button>
+                <button class="yt-btn" data-jwp="tidak">Tidak</button>
+              </div>
+              <p class="fb"></p>
+            </div>
+
+            <div class="card" id="q2" data-q="q2" hidden>
+              <h3>Soalan 2</h3>
+              <p class="soal">Berdasarkan video kedua, adakah ayat yang disampaikan mempunyai kesalahan struktur ayat?</p>
+              <div class="yt">
+                <button class="yt-btn" data-jwp="ya">Ya</button>
+                <button class="yt-btn" data-jwp="tidak">Tidak</button>
+              </div>
+              <p class="fb"></p>
+            </div>
+
+            <div class="card" id="q3" data-q="q3" hidden>
+              <h3>Soalan 3</h3>
+              <p class="soal">Apakah perbezaan antara ayat yang disampaikan dalam kedua-dua video tersebut?</p>
+              <div class="yt menegak">
+                <button class="yt-btn panjang" data-jwp="a">Ayat dalam video pertama sukar difahami, manakala ayat dalam video kedua lebih jelas dan mudah difahami.</button>
+                <button class="yt-btn panjang" data-jwp="b">Ayat dalam video pertama lebih jelas, manakala ayat dalam video kedua sukar difahami.</button>
+              </div>
+              <p class="fb"></p>
+            </div>
+
+            <!-- Nama & kelas, kemudian hantar ke Google Sheets (muncul selepas Soalan 3 betul) -->
+            <div class="card" id="maklumat" hidden>
+              <h3>Hantar jawapan</h3>
+              <div class="row">
+                <label>Nama<br><input type="text" id="nama" placeholder="Nama anda" autocomplete="off"></label>
+                <label>Kelas<br><input type="text" id="kelas" placeholder="Contoh: 6 Kuning" autocomplete="off"></label>
+              </div>
+              <p><button id="btn-hantar" class="btn">Hantar jawapan</button></p>
+              <p id="hantar-fb" class="fb"></p>
+              <p id="hantar-nota" class="muted" hidden></p>
+              <p id="lanjut" hidden><button id="btn-lanjut" class="btn">Teruskan ke Langkah 1</button></p>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <section id="l1">
+      <!-- Latar belakang Melayu (melekat semasa murid skrol). Simpan sebagai melayu-bg.png -->
+      <div class="bg-layer">
+        <img class="bg-media" src="melayu-bg.png" alt="" onerror="this.remove()">
+      </div>
+
+      <div class="wrap bg-content">
+        <!-- AKTIVITI SERET & LETAK: satu jadual bagi setiap ayat.
+             Setiap perkataan ada data-ayat dan data-kat (su / k / o / ket).
+             Untuk tukar ayat, ubah perkataan dalam setiap kolam di bawah. -->
+        <p class="pill">Seret setiap perkataan ke petak yang betul dalam jadual. 🧩</p>
+
+        <div class="card susun-kad" data-ayat="1">
+          <h3>Ayat 1</h3>
+          <div class="jadual-skrol">
+            <table class="jadual-susun">
+              <thead>
+                <tr><th rowspan="2" class="h-su">Subjek</th><th colspan="3" class="h-p">Predikat</th></tr>
+                <tr><th class="h-k">Kata Kerja</th><th class="h-o">Objek</th><th class="h-ket">Keterangan</th></tr>
+              </thead>
+              <tbody>
+                <tr data-ayat="1">
+                  <td class="drop" data-kat="su" tabindex="0"></td>
+                  <td class="drop" data-kat="k" tabindex="0"></td>
+                  <td class="drop" data-kat="o" tabindex="0"></td>
+                  <td class="drop" data-kat="ket" tabindex="0"></td>
+                </tr>
+                <tr class="ayat-penuh" hidden><td colspan="4"></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- Perkataan terapung untuk Ayat 1 (disusun rawak oleh skrip; tiada warna) -->
+          <div class="kolam-kata" aria-label="Perkataan untuk Ayat 1">
+            <span class="wchip" data-ayat="1" data-kat="su" tabindex="0">Ibu</span>
+            <span class="wchip" data-ayat="1" data-kat="k" tabindex="0">memasak</span>
+            <span class="wchip" data-ayat="1" data-kat="o" tabindex="0">nasi</span>
+            <span class="wchip" data-ayat="1" data-kat="ket" tabindex="0">di dapur pada waktu pagi.</span>
+          </div>
+        </div>
+
+        <div class="card susun-kad" data-ayat="2">
+          <h3>Ayat 2</h3>
+          <div class="jadual-skrol">
+            <table class="jadual-susun">
+              <thead>
+                <tr><th rowspan="2" class="h-su">Subjek</th><th colspan="3" class="h-p">Predikat</th></tr>
+                <tr><th class="h-k">Kata Kerja</th><th class="h-o">Objek</th><th class="h-ket">Keterangan</th></tr>
+              </thead>
+              <tbody>
+                <tr data-ayat="2">
+                  <td class="drop" data-kat="su" tabindex="0"></td>
+                  <td class="drop" data-kat="k" tabindex="0"></td>
+                  <td class="drop" data-kat="o" tabindex="0"></td>
+                  <td class="drop" data-kat="ket" tabindex="0"></td>
+                </tr>
+                <tr class="ayat-penuh" hidden><td colspan="4"></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- Perkataan terapung untuk Ayat 2 (disusun rawak oleh skrip; tiada warna) -->
+          <div class="kolam-kata" aria-label="Perkataan untuk Ayat 2">
+            <span class="wchip" data-ayat="2" data-kat="su" tabindex="0">Kakak</span>
+            <span class="wchip" data-ayat="2" data-kat="k" tabindex="0">menulis</span>
+            <span class="wchip" data-ayat="2" data-kat="o" tabindex="0">surat</span>
+            <span class="wchip" data-ayat="2" data-kat="ket" tabindex="0">dengan tekun.</span>
+          </div>
+        </div>
+
+        <p id="jadual-tahniah" class="pill fb ok" hidden>Tahniah! Anda telah menyusun kedua-dua ayat dengan betul. 🎉</p>
+
+        <p class="pill">Tekan setiap huruf untuk melihat penerangannya. 👆</p>
+
+        <!-- Tajuk SuP(KOK) (gaya sama seperti halaman utama) -->
+        <img class="sup-judul" src="sup-kok.png" alt="SuP (KOK)">
+
+        <!-- Lima butang. Setiap satu dibuka/ditutup sendiri; yang sudah dibuka kekal terbuka
+             apabila murid menekan butang lain. -->
+        <div class="sup-list" id="sup-list">
+
+          <div class="sup-item">
+            <button class="sup-btn" aria-expanded="false" aria-controls="sup-su">
+              <span class="sup-huruf">Su</span><span class="sup-nama">Subjek</span><span class="sup-ikon" aria-hidden="true">▾</span>
+            </button>
+            <div class="sup-panel" id="sup-su"><div class="sup-dalam"><div class="sup-isi">
+              <p>Subjek ialah orang, haiwan atau benda yang menjadi perkara utama dalam sesuatu ayat.</p>
+              <p class="sup-contoh"><b>Contoh:</b>
+                <span class="chip">Ali</span><span class="chip">ibu</span><span class="chip">kucing</span><span class="chip">murid-murid</span></p>
+            </div></div></div>
+          </div>
+
+          <div class="sup-item">
+            <button class="sup-btn" aria-expanded="false" aria-controls="sup-p">
+              <span class="sup-huruf">P</span><span class="sup-nama">Predikat</span><span class="sup-ikon" aria-hidden="true">▾</span>
+            </button>
+            <div class="sup-panel" id="sup-p"><div class="sup-dalam"><div class="sup-isi">
+              <p>Predikat ialah bahagian ayat yang menerangkan tentang subjek. Predikat boleh terdiri daripada frasa kerja, frasa adjektif, frasa nama atau frasa sendi nama.</p>
+              <p class="sup-contoh"><b>Contoh:</b>
+                <span class="chip">sedang membaca buku di perpustakaan</span></p>
+            </div></div></div>
+          </div>
+
+          <div class="sup-item">
+            <button class="sup-btn" aria-expanded="false" aria-controls="sup-k1">
+              <span class="sup-huruf">K</span><span class="sup-nama">Kata Kerja</span><span class="sup-ikon" aria-hidden="true">▾</span>
+            </button>
+            <div class="sup-panel" id="sup-k1"><div class="sup-dalam"><div class="sup-isi">
+              <p>Kata kerja ialah perkataan yang menunjukkan perbuatan atau tindakan yang dilakukan oleh subjek.</p>
+              <p class="sup-contoh"><b>Contoh:</b>
+                <span class="chip">membaca</span><span class="chip">menulis</span><span class="chip">menyapu</span><span class="chip">memasak</span></p>
+            </div></div></div>
+          </div>
+
+          <div class="sup-item">
+            <button class="sup-btn" aria-expanded="false" aria-controls="sup-o">
+              <span class="sup-huruf">O</span><span class="sup-nama">Objek</span><span class="sup-ikon" aria-hidden="true">▾</span>
+            </button>
+            <div class="sup-panel" id="sup-o"><div class="sup-dalam"><div class="sup-isi">
+              <p>Objek ialah sesuatu yang menerima perbuatan daripada kata kerja transitif.</p>
+              <p>Tanya soalan <b>"Apa?"</b> selepas kata kerja untuk mencari objek.</p>
+              <p class="sup-contoh"><b>Contoh:</b>
+                <span class="chip">buku</span><span class="chip">surat</span><span class="chip">lantai</span><span class="chip">nasi</span></p>
+            </div></div></div>
+          </div>
+
+          <div class="sup-item">
+            <button class="sup-btn" aria-expanded="false" aria-controls="sup-k2">
+              <span class="sup-huruf">K</span><span class="sup-nama">Keterangan</span><span class="sup-ikon" aria-hidden="true">▾</span>
+            </button>
+            <div class="sup-panel" id="sup-k2"><div class="sup-dalam"><div class="sup-isi">
+              <p>Keterangan ialah unsur yang memberikan maklumat tambahan tentang sesuatu perbuatan, seperti masa, tempat, cara, sebab, atau tujuan.</p>
+              <p class="sup-contoh"><b>Contoh:</b>
+                <span class="chip">pada waktu petang</span><span class="chip">di perpustakaan</span><span class="chip">dengan tekun</span></p>
+            </div></div></div>
+          </div>
+
+        </div>
+
+        <!-- Contoh ayat -->
+        <div class="card sup-ayat">
+          <h3>Contoh ayat</h3>
+          <p class="ayat-besar">
+            <span class="m m-su">Ali</span>
+            <span class="m-p"><span class="m m-k">membaca</span>
+            <span class="m m-o">buku</span>
+            <span class="m m-ket">di perpustakaan pada waktu petang.</span></span>
+          </p>
+          <table class="sup-jadual">
+            <thead><tr><th>Komponen</th><th>Perkataan dalam ayat</th></tr></thead>
+            <tbody>
+              <tr><td><span class="m m-su">Su</span> Subjek</td><td>Ali</td></tr>
+              <tr><td><span class="m m-p2">P</span> Predikat</td><td>membaca buku di perpustakaan pada waktu petang.</td></tr>
+              <tr><td><span class="m m-k">K</span> Kata Kerja</td><td>membaca</td></tr>
+              <tr><td><span class="m m-o">O</span> Objek</td><td>buku</td></tr>
+              <tr><td><span class="m m-ket">K</span> Keterangan</td><td>di perpustakaan pada waktu petang.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p><button id="btn-l1-lanjut" class="btn-biru">Teruskan ke Langkah 2</button></p>
+      </div>
+    </section>
+
+    <section id="l2">
+      <!-- Latar belakang India (melekat semasa murid skrol). Simpan sebagai india-bg.png -->
+      <div class="bg-layer">
+        <img class="bg-media" src="india-bg.png" alt="" onerror="this.remove()">
+      </div>
+
+      <div class="wrap bg-content l2-wrap">
+        <p class="pill">Teliti gambar di sebelah. Bina <b>tiga ayat yang lengkap</b> berdasarkan aktiviti dalam gambar dengan menerapkan struktur ayat <b>SuP(KOK)</b>. ✍️</p>
+
+        <div class="l2-grid">
+          <!-- KOLUM KIRI: Gambar rangsangan melekat (sticky) -->
+          <div class="l2-kol-gambar">
+            <div class="card gambar-kad">
+              <img id="l2-gambar" class="gambar-l2" src="langkah2-gambar.jpg" alt="Gotong-royong di Taman Luyang: menyapu, mengutip, menyediakan, menghias, mengasingkan, mengecat, menanam, menyiram" title="Tekan untuk besarkan">
+              <div class="l2-gambar-bar">
+                <span class="muted gambar-nota">Perhatikan aktiviti dalam gambar dengan teliti. 🔍</span>
+                <button type="button" id="l2-btn-zum" class="l2-zum-btn">Besarkan gambar 🔎</button>
+              </div>
+            </div>
+            <!-- Senarai semak kendiri (satu bagi setiap aktiviti; hanya yang aktif dipaparkan) -->
+            <div class="l2-semak-wadah">
+              <div class="l2-semak-kendiri" id="l2-semak-1" data-no="1">
+                <p class="l2-semak-tajuk">Semak ayat anda:</p>
+                <label class="l2-cek"><input type="checkbox" class="l2-chk"> <span>Ayat saya mempunyai subjek dan predikat yang lengkap.</span></label>
+                <label class="l2-cek"><input type="checkbox" class="l2-chk"> <span>Saya menggunakan kata kerja, objek dan keterangan yang sesuai berdasarkan SuP(KOK).</span></label>
+                <label class="l2-cek"><input type="checkbox" class="l2-chk"> <span>Saya menggunakan huruf besar pada awal ayat.</span></label>
+                <label class="l2-cek"><input type="checkbox" class="l2-chk"> <span>Saya meletakkan tanda noktah pada akhir ayat.</span></label>
+              </div>
+              <div class="l2-semak-kendiri" id="l2-semak-2" data-no="2" hidden>
+                <p class="l2-semak-tajuk">Semak ayat anda:</p>
+                <label class="l2-cek"><input type="checkbox" class="l2-chk"> <span>Ayat saya mempunyai subjek dan predikat yang lengkap.</span></label>
+                <label class="l2-cek"><input type="checkbox" class="l2-chk"> <span>Saya menggunakan kata kerja, objek dan keterangan yang sesuai berdasarkan SuP(KOK).</span></label>
+                <label class="l2-cek"><input type="checkbox" class="l2-chk"> <span>Saya menggunakan huruf besar pada awal ayat.</span></label>
+                <label class="l2-cek"><input type="checkbox" class="l2-chk"> <span>Saya meletakkan tanda noktah pada akhir ayat.</span></label>
+              </div>
+              <div class="l2-semak-kendiri" id="l2-semak-3" data-no="3" hidden>
+                <p class="l2-semak-tajuk">Semak ayat anda:</p>
+                <label class="l2-cek"><input type="checkbox" class="l2-chk"> <span>Ayat saya mempunyai subjek dan predikat yang lengkap.</span></label>
+                <label class="l2-cek"><input type="checkbox" class="l2-chk"> <span>Saya menggunakan kata kerja, objek dan keterangan yang sesuai berdasarkan SuP(KOK).</span></label>
+                <label class="l2-cek"><input type="checkbox" class="l2-chk"> <span>Saya menggunakan huruf besar pada awal ayat.</span></label>
+                <label class="l2-cek"><input type="checkbox" class="l2-chk"> <span>Saya meletakkan tanda noktah pada akhir ayat.</span></label>
+              </div>
+            </div>
+          </div>
+
+          <!-- KOLUM KANAN: Tab Aktiviti 1 | Aktiviti 2 | Aktiviti 3 + Ruang Menulis -->
+          <div class="l2-kol-aktiviti">
+            <!-- Tab pemilihan aktiviti -->
+            <div class="l2-progres-baris"><span class="l2-progres-teks" id="l2-progres-teks" role="status">0 / 3 ayat ditulis</span></div>
+            <div class="l2-tabs" role="tablist" aria-label="Pilih Aktiviti Membina Ayat">
+              <button type="button" class="l2-tab active" role="tab" id="l2-tab-1" aria-selected="true" aria-controls="l2-panel-1" data-aktiviti="1">
+                <span>Aktiviti 1</span>
+                <span class="l2-status" id="l2-status-1" aria-label="Belum diisi" hidden>✓</span>
+              </button>
+              <button type="button" class="l2-tab" role="tab" id="l2-tab-2" aria-selected="false" aria-controls="l2-panel-2" data-aktiviti="2" tabindex="-1">
+                <span>Aktiviti 2</span>
+                <span class="l2-status" id="l2-status-2" aria-label="Belum diisi" hidden>✓</span>
+              </button>
+              <button type="button" class="l2-tab" role="tab" id="l2-tab-3" aria-selected="false" aria-controls="l2-panel-3" data-aktiviti="3" tabindex="-1">
+                <span>Aktiviti 3</span>
+                <span class="l2-status" id="l2-status-3" aria-label="Belum diisi" hidden>✓</span>
+              </button>
+            </div>
+
+            <!-- AKTIVITI 1 -->
+            <div class="card bina-kad" role="tabpanel" id="l2-panel-1" aria-labelledby="l2-tab-1" data-no="1">
+              <div class="l2-kad-kepala">
+                <h3>Aktiviti 1 — Bina Ayat Pertama</h3>
+                <span class="l2-badge">Ayat 1 daripada 3</span>
+              </div>
+              <p class="l2-arahan">Pilih <b>satu aktiviti</b> yang dapat anda lihat dalam gambar, kemudian bina <b>satu ayat yang lengkap</b> menggunakan struktur <b>SuP(KOK)</b>.</p>
+
+              <label class="l2-label-tulis" for="l2-ayat-1">Tulis ayat lengkap anda di sini:</label>
+              <textarea id="l2-ayat-1" class="bina-ayat" rows="4" autocomplete="off" spellcheck="false" placeholder="Contoh struktur: Siapa + buat apa + apa + di mana / bagaimana..."></textarea>
+
+              <!-- Bantuan SuP(KOK) pilihan -->
+              <div class="l2-bantuan-blok">
+                <button type="button" class="l2-bantuan-btn" aria-expanded="false" aria-controls="l2-panduan-1">💡 Bantuan SuP(KOK)</button>
+                <div class="l2-panduan" id="l2-panduan-1" hidden>
+                  <p class="l2-panduan-tajuk">Panduan Membina Ayat SuP(KOK):</p>
+                  <ul>
+                    <li><b>Su — Subjek:</b> Siapa atau apa yang diceritakan?</li>
+                    <li><b>P — Predikat:</b> Apakah yang diceritakan tentang subjek?</li>
+                    <li><b>K — Kata Kerja:</b> Apakah perbuatan yang dilakukan?</li>
+                    <li><b>O — Objek:</b> Apakah yang menerima perbuatan tersebut?</li>
+                    <li><b>K — Keterangan:</b> Di mana, bila atau bagaimana perbuatan berlaku?</li>
+                  </ul>
+                </div>
+              </div>
+              <p class="l2-ingat" role="status" hidden><span aria-hidden="true">🔔</span> Jangan lupa! Semak ayat di bawah gambar <span class="l2-ingat-panah" aria-hidden="true"></span></p>
+
+            </div>
+
+            <!-- AKTIVITI 2 -->
+            <div class="card bina-kad" role="tabpanel" id="l2-panel-2" aria-labelledby="l2-tab-2" data-no="2" hidden>
+              <div class="l2-kad-kepala">
+                <h3>Aktiviti 2 — Bina Ayat Kedua</h3>
+                <span class="l2-badge">Ayat 2 daripada 3</span>
+              </div>
+              <p class="l2-arahan">Pilih <b>satu aktiviti lain</b> yang berbeza daripada Aktiviti 1 dalam gambar, kemudian bina <b>satu ayat yang lengkap</b> menggunakan struktur <b>SuP(KOK)</b>.</p>
+
+              <label class="l2-label-tulis" for="l2-ayat-2">Tulis ayat lengkap anda di sini:</label>
+              <textarea id="l2-ayat-2" class="bina-ayat" rows="4" autocomplete="off" spellcheck="false" placeholder="Taip ayat kedua anda yang lengkap di sini..."></textarea>
+
+              <!-- Bantuan SuP(KOK) pilihan -->
+              <div class="l2-bantuan-blok">
+                <button type="button" class="l2-bantuan-btn" aria-expanded="false" aria-controls="l2-panduan-2">💡 Bantuan SuP(KOK)</button>
+                <div class="l2-panduan" id="l2-panduan-2" hidden>
+                  <p class="l2-panduan-tajuk">Panduan Membina Ayat SuP(KOK):</p>
+                  <ul>
+                    <li><b>Su — Subjek:</b> Siapa atau apa yang diceritakan?</li>
+                    <li><b>P — Predikat:</b> Apakah yang diceritakan tentang subjek?</li>
+                    <li><b>K — Kata Kerja:</b> Apakah perbuatan yang dilakukan?</li>
+                    <li><b>O — Objek:</b> Apakah yang menerima perbuatan tersebut?</li>
+                    <li><b>K — Keterangan:</b> Di mana, bila atau bagaimana perbuatan berlaku?</li>
+                  </ul>
+                </div>
+              </div>
+              <p class="l2-ingat" role="status" hidden><span aria-hidden="true">🔔</span> Jangan lupa! Semak ayat di bawah gambar <span class="l2-ingat-panah" aria-hidden="true"></span></p>
+
+            </div>
+
+            <!-- AKTIVITI 3 -->
+            <div class="card bina-kad" role="tabpanel" id="l2-panel-3" aria-labelledby="l2-tab-3" data-no="3" hidden>
+              <div class="l2-kad-kepala">
+                <h3>Aktiviti 3 — Bina Ayat Ketiga</h3>
+                <span class="l2-badge">Ayat 3 daripada 3</span>
+              </div>
+              <p class="l2-arahan">Pilih <b>satu lagi aktiviti berbeza</b> daripada gambar, kemudian bina <b>satu ayat yang lengkap</b> menggunakan struktur <b>SuP(KOK)</b>.</p>
+
+              <label class="l2-label-tulis" for="l2-ayat-3">Tulis ayat lengkap anda di sini:</label>
+              <textarea id="l2-ayat-3" class="bina-ayat" rows="4" autocomplete="off" spellcheck="false" placeholder="Taip ayat ketiga anda yang lengkap di sini..."></textarea>
+
+              <!-- Bantuan SuP(KOK) pilihan -->
+              <div class="l2-bantuan-blok">
+                <button type="button" class="l2-bantuan-btn" aria-expanded="false" aria-controls="l2-panduan-3">💡 Bantuan SuP(KOK)</button>
+                <div class="l2-panduan" id="l2-panduan-3" hidden>
+                  <p class="l2-panduan-tajuk">Panduan Membina Ayat SuP(KOK):</p>
+                  <ul>
+                    <li><b>Su — Subjek:</b> Siapa atau apa yang diceritakan?</li>
+                    <li><b>P — Predikat:</b> Apakah yang diceritakan tentang subjek?</li>
+                    <li><b>K — Kata Kerja:</b> Apakah perbuatan yang dilakukan?</li>
+                    <li><b>O — Objek:</b> Apakah yang menerima perbuatan tersebut?</li>
+                    <li><b>K — Keterangan:</b> Di mana, bila atau bagaimana perbuatan berlaku?</li>
+                  </ul>
+                </div>
+              </div>
+              <p class="l2-ingat" role="status" hidden><span aria-hidden="true">🔔</span> Jangan lupa! Semak ayat di bawah gambar <span class="l2-ingat-panah" aria-hidden="true"></span></p>
+
+            </div>
+
+            <!-- Kad Hantar Jawapan -->
+            <div class="card" id="l2-hantar-kad" hidden>
+              <div class="l2-hantar-atas">
+                <h3>Hantar jawapan</h3>
+              </div>
+              <p class="muted l2-hantar-nota">Pastikan ketiga-tiga ayat telah ditulis sebelum menghantar.</p>
+              <p><button type="button" id="l2-hantar" class="btn">Hantar jawapan</button></p>
+              <p id="l2-fb" class="fb"></p>
+              <p id="l2-nota" class="muted" hidden></p>
+              <p id="l2-lanjut" hidden><button type="button" id="l2-btn-lanjut" class="btn-ungu">Teruskan ke Langkah 3</button></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gambar besar -->
+        <div id="l2-zum" class="zum" hidden><img src="langkah2-gambar.jpg" alt="Gotong-royong di Taman Luyang"></div>
+      </div>
+    </section>
+
+    <section id="l3">
+      <!-- Latar belakang Kadazan Dusun (melekat semasa murid skrol). Simpan sebagai kadazan-bg.png -->
+      <div class="bg-layer">
+        <img class="bg-media" src="kadazan-bg.png" alt="" onerror="this.remove()">
+      </div>
+
+      <div class="wrap bg-content">
+        <p class="pill">Baca teks di bawah dengan teliti. Cari ayat yang mempunyai kesalahan tatabahasa, kemudian tekan ayat itu. Setiap perenggan ada satu ayat yang salah. 🔍</p>
+        <p class="pill progres">Kesalahan ditemui: <b id="l3-kira">0</b> / <b id="l3-jumlah">0</b><span class="bar" aria-hidden="true"><i class="isi" id="l3-bar"></i></span><span class="l3-sub">Jawapan ditulis: <b id="l3-betul-kira">0</b> / 4</span></p>
+
+        <!-- Teks. Ayat yang salah ditanda data-salah="1". Ayat betul ditekan: bertukar merah.
+             Ayat yang tidak salah ditekan: tanda X. -->
+        <div class="card teks-kad" id="l3-teks">
+          <p>
+            <span class="ayat" role="button" tabindex="0">Encik Kuan Chee Heng atau lebih terkenal dengan panggilan Uncle Kentang merupakan wira masyarakat.</span>
+            <span class="ayat" data-salah="1" role="button" tabindex="0">Beliau banyak kerja amal menubuhkan, bagi membantu golongan yang kurang bernasib baik.</span>
+          </p>
+          <div class="l3-kotak" id="l3-kotak-1" hidden>
+            <label for="l3-j1">✍️ Betulkan ayat ini:</label>
+            <textarea id="l3-j1" class="l3-jwb" rows="2" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="Taip ayat yang betul di sini..."></textarea>
+            <p class="fb l3-fb-kotak"></p>
+          </div>
+          <p>
+            <span class="ayat" role="button" tabindex="0">Pelbagai inisiatif dilakukan oleh beliau dalam usaha membantu golongan yang memerlukan bantuan.</span>
+            <span class="ayat" role="button" tabindex="0">Sebagai contoh, beliau menyediakan perkhidmatan hotel, ambulans dan perpustakaan dengan hanya mengenakan caj sebanyak 10 sen.</span>
+            <span class="ayat" data-salah="1" role="button" tabindex="0">Perkhidmatan itu terbuka kepada sesiapa sahaja tanpa mengira kaum dan agama yang memerlukan bantuan!</span>
+          </p>
+          <div class="l3-kotak" id="l3-kotak-2" hidden>
+            <label for="l3-j2">✍️ Betulkan ayat ini:</label>
+            <textarea id="l3-j2" class="l3-jwb" rows="2" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="Taip ayat yang betul di sini..."></textarea>
+            <p class="fb l3-fb-kotak"></p>
+          </div>
+          <p>
+            <span class="ayat" role="button" tabindex="0">Selain itu, Community Policing (CP) turut ditubuhkan oleh beliau.</span>
+            <span class="ayat" data-salah="1" role="button" tabindex="0">Membantu golongan susah tetapi juga, tujuan penubuhan CP bukan sekadar untuk meliputi hal-hal lain?</span>
+            <span class="ayat" role="button" tabindex="0">Masalah seperti menyegerakan pembaikan lampu isyarat dan jalan berlubang serta masalah anjing liar turut diberikan perhatian.</span>
+          </p>
+          <div class="l3-kotak" id="l3-kotak-3" hidden>
+            <label for="l3-j3">✍️ Betulkan ayat ini:</label>
+            <textarea id="l3-j3" class="l3-jwb" rows="2" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="Taip ayat yang betul di sini..."></textarea>
+            <p class="fb l3-fb-kotak"></p>
+          </div>
+          <p>
+            <span class="ayat" role="button" tabindex="0">Menurut Encik Kuan, beliau percaya bahawa pintu rezeki akan terbuka seluas-luasnya sekiranya seseorang itu bermurah hati.</span>
+            <span class="ayat" data-salah="1" role="button" tabindex="0">Seseorang yang suka kebajikan membuat akan mendapat kebaikan berpanjangan seperti tanpa henti air yang mengalir.</span>
+          </p>
+          <div class="l3-kotak" id="l3-kotak-4" hidden>
+            <label for="l3-j4">✍️ Betulkan ayat ini:</label>
+            <textarea id="l3-j4" class="l3-jwb" rows="2" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="Taip ayat yang betul di sini..."></textarea>
+            <p class="fb l3-fb-kotak"></p>
+          </div>
+        </div>
+        <p id="l3-tahniah" class="pill fb ok" hidden>Tahniah! Anda telah menemui semua ayat yang salah. Sekarang betulkan setiap ayat itu. 🎉</p>
+
+        <!-- Hantar: muncul selepas semua kesalahan ditemui -->
+        <div class="card" id="l3-betulkan" hidden>
+          <h3>Semak jawapan anda</h3>
+          <p class="muted">Pastikan keempat-empat ayat telah dibetulkan. Perhatikan huruf besar dan tanda baca.</p>
+          <p><button id="l3-semak" class="btn">Semak jawapan</button></p>
+          <p id="l3-fb" class="fb"></p>
+          <p id="l3-nota" class="muted" hidden></p>
+        </div>
+
+        <!-- Papan skor (muncul selepas murid menyemak jawapan) -->
+        <div class="card skor-kad" id="l3-skor" hidden>
+          <h3>Skor anda</h3>
+          <p class="skor-besar"><span id="l3-skor-no">0</span> / 4</p>
+          <p id="l3-skor-msg" class="fb ok"></p>
+        </div>
+        <p id="l3-lanjut" hidden><button id="btn-l3-lanjut" class="btn-hitam">Teruskan ke Aktiviti Pengukuhan</button></p>
+      </div>
+    </section>
+
+    <section id="susun">
+      <!-- Latar belakang Iban (melekat semasa murid skrol). Simpan sebagai iban-bg.png -->
+      <div class="bg-layer">
+        <img class="bg-media" src="iban-bg.png" alt="" onerror="this.remove()">
+      </div>
+
+      <div class="wrap bg-content">
+        <!-- Belum ada skor Langkah 3: minta murid selesaikan Langkah 3 dahulu -->
+        <div class="card" id="susun-belum" hidden>
+          <h3>Selesaikan Langkah 3 dahulu</h3>
+          <p>Anda perlu menyiapkan dan menghantar jawapan Langkah 3 sebelum boleh membuat aktiviti ini.</p>
+          <p><button id="susun-ke-l3" class="btn">Pergi ke Langkah 3</button></p>
+        </div>
+
+        <!-- Skor Langkah 3 = 1 atau 2 -> PEMULIHAN (label tahap sengaja tidak dipaparkan kepada murid) -->
+        <div id="susun-pemulihan" data-tahap="pemulihan" hidden>
+          <p class="pill">Lihat gambar. Susun perkataan di bawah supaya menjadi ayat yang betul. 🧩</p>
+          <p class="pill progres">Ayat betul: <b class="susun-kira">0</b> / <b class="susun-jumlah">0</b><span class="bar" aria-hidden="true"><i class="isi"></i></span></p>
+          <div class="susun-senarai"></div>
+          <!-- Mesej Syabas + butang Teruskan: muncul hanya apabila semua ayat disahkan betul -->
+          <div class="susun-tahniah susun-tamat" hidden>
+            <div class="susun-syabas" role="status">
+              <span class="susun-syabas-ikon" aria-hidden="true">🎉</span>
+              <div>
+                <p class="susun-syabas-tajuk">Syabas! Ayat kamu betul!</p>
+                <p class="susun-syabas-teks">Kamu berjaya menyusun perkataan menjadi ayat yang lengkap.</p>
+              </div>
+            </div>
+            <p class="susun-tamat-btn"><button class="btn-biru btn-ke-penutup">Teruskan ke Penutup</button></p>
+          </div>
+        </div>
+
+        <!-- Skor Langkah 3 = 3 atau 4 -> PENGAYAAN -->
+        <div id="susun-pengayaan" data-tahap="pengayaan" hidden>
+          <p class="pill">Lihat gambar. Susun perkataan di bawah supaya menjadi ayat yang betul. 🧩</p>
+          <p class="pill progres">Ayat betul: <b class="susun-kira">0</b> / <b class="susun-jumlah">0</b><span class="bar" aria-hidden="true"><i class="isi"></i></span></p>
+          <div class="susun-senarai"></div>
+          <!-- Mesej Syabas + butang Teruskan: muncul hanya apabila semua ayat disahkan betul -->
+          <div class="susun-tahniah susun-tamat" hidden>
+            <div class="susun-syabas" role="status">
+              <span class="susun-syabas-ikon" aria-hidden="true">🎉</span>
+              <div>
+                <p class="susun-syabas-tajuk">Syabas! Ayat kamu betul!</p>
+                <p class="susun-syabas-teks">Kamu berjaya menyusun perkataan menjadi ayat yang lengkap.</p>
+              </div>
+            </div>
+            <p class="susun-tamat-btn"><button class="btn-biru btn-ke-penutup">Teruskan ke Penutup</button></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="penutup">
+      <!-- Latar belakang Jalur Gemilang (melekat semasa murid skrol). Simpan sebagai penutup-bg.png -->
+      <div class="bg-layer">
+        <img class="bg-media" src="penutup-bg.png" alt="" onerror="this.remove()">
+      </div>
+
+      <div class="wrap bg-content">
+        <p class="pill">Isi Tiket Refleksi ini dengan jujur, kemudian tekan hantar. ✏️</p>
+
+        <form id="tiket" class="tiket" autocomplete="off" novalidate>
+          <h2 class="tiket-tajuk">Tiket Refleksi 📝</h2>
+
+          <div class="t-baris">
+            <label class="t-medan">Nama<input type="text" id="p-nama" placeholder="Nama anda"></label>
+            <label class="t-medan">Kelas<input type="text" id="p-kelas" placeholder="Contoh: 6 Kuning"></label>
+          </div>
+
+          <div class="t-soalan t-s1" data-s="q1">
+            <p class="t-tajuk"><span class="t-no">1</span>Sejauh manakah kamu memahami teknik SuP(KOK) untuk membina ayat?</p>
+            <label class="t-opsyen t-hijau"><input type="radio" name="q1" value="Sangat faham"><span class="t-tanda"></span><span>A. Sangat faham</span></label>
+            <label class="t-opsyen t-kuning"><input type="radio" name="q1" value="Faham"><span class="t-tanda"></span><span>B. Faham</span></label>
+            <label class="t-opsyen t-merah"><input type="radio" name="q1" value="Masih memerlukan bimbingan"><span class="t-tanda"></span><span>C. Masih memerlukan bimbingan</span></label>
+          </div>
+
+          <div class="t-soalan t-s2" data-s="q2">
+            <p class="t-tajuk"><span class="t-no">2</span>Apakah kepentingan semangat perpaduan dalam kalangan masyarakat?</p>
+            <textarea id="p-q2" rows="3" placeholder="Tulis jawapan anda di sini..."></textarea>
+          </div>
+
+          <div class="t-soalan t-s3" data-s="q3">
+            <p class="t-tajuk"><span class="t-no">3</span>Apakah perkara yang paling kamu ingat daripada pembelajaran hari ini?</p>
+            <textarea id="p-q3" rows="3" placeholder="Tulis jawapan anda di sini..."></textarea>
+          </div>
+
+          <div class="t-soalan t-s4" data-s="q4">
+            <p class="t-tajuk"><span class="t-no">4</span>Bagaimanakah perasaan dan tahap kefahaman kamu selepas mengikuti pembelajaran hari ini?</p>
+            <label class="t-opsyen t-kuning"><input type="radio" name="q4" value="Sangat seronok dan sangat faham"><span class="t-tanda"></span><span class="t-emo">😍</span><span>Sangat seronok dan sangat faham.</span></label>
+            <label class="t-opsyen t-hijau"><input type="radio" name="q4" value="Seronok tetapi masih kurang faham"><span class="t-tanda"></span><span class="t-emo">🙂</span><span>Seronok tetapi masih kurang faham.</span></label>
+            <label class="t-opsyen t-biru"><input type="radio" name="q4" value="Kurang seronok dan masih keliru"><span class="t-tanda"></span><span class="t-emo">😐</span><span>Kurang seronok dan masih keliru.</span></label>
+            <label class="t-opsyen t-merah"><input type="radio" name="q4" value="Saya masih memerlukan bimbingan guru"><span class="t-tanda"></span><span class="t-emo">🙁</span><span>Saya masih memerlukan bimbingan guru.</span></label>
+          </div>
+
+          <p><button type="submit" id="t-hantar" class="btn">Hantar tiket</button></p>
+          <p id="t-fb" class="fb"></p>
+          <p id="t-nota" class="muted" hidden></p>
+        </form>
+
+        <div id="t-tamat" class="card t-tamat" hidden>
+          <h3>Terima kasih! 🎉</h3>
+          <p>Tiket Refleksi anda telah dihantar. Tahniah kerana menamatkan pembelajaran hari ini!</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+</div>
+
+<!-- Butang bunyi (muzik + kesan bunyi) -->
+<button id="btn-bunyi" class="btn-bunyi" type="button" aria-pressed="true" aria-label="Matikan bunyi" title="Matikan bunyi">
+  <svg class="ik-hidup" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path fill="currentColor" d="M3 9v6h4l5 4V5L7 9H3z"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg>
+  <svg class="ik-senyap" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path fill="currentColor" d="M3 9v6h4l5 4V5L7 9H3z"/><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" d="M16 9.5l5 5m0-5l-5 5"/></svg>
+</button>
+
+<!-- Ikon besar betul / salah -->
+<div id="popup" class="popup" aria-hidden="true"></div>
+
+<script src="script.js"></script>
+</body>
+</html>

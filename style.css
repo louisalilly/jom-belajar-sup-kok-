@@ -1,0 +1,1961 @@
+*{box-sizing:border-box}
+
+/* =====================================================
+   TEMA — satu set warna untuk setiap kaum / tab.
+   Untuk tukar warna, ubah nilai di bawah sahaja.
+   ===================================================== */
+
+/* Halaman utama & Penutup: semua kaum (warna Jalur Gemilang) */
+body[data-theme="semua"]{
+  --nav-deco-top:url("penutup-nav-top.png") top center / 100% auto no-repeat;
+  --nav-deco-bottom:url("penutup-nav-bottom.png") bottom center / 100% auto no-repeat;
+  --nav-pad-top:250px;
+  --nav-bg:#14286b;
+  --nav-text:#d6e0ff;
+  --nav-hover:rgba(255,255,255,.14);
+  --nav-active-bg:#facc15;
+  --nav-active-text:#0f2a6b;
+  --page-bg:#f3f6ff;
+  --accent:#1d4ed8;
+  --pattern:repeating-linear-gradient(0deg,rgba(220,38,38,.07) 0 14px,transparent 14px 28px);
+  --pattern-size:auto;
+}
+
+/* Set Induksi (selepas butang Mula): Cina */
+body[data-theme="cina"]{
+  /* Hiasan menu: nav-top.png (atas) dan nav-bottom.png (bawah) */
+  --nav-deco-top:url("nav-top.png") top left / 125% auto no-repeat;
+  --nav-deco-bottom:url("nav-bottom.png") bottom center / 100% auto no-repeat;
+  --nav-pad-top:250px;   /* ruang di atas untuk lentera; butang menu bermula di bawahnya */
+  --nav-bg:#9b1c1c;
+  --nav-text:#ffe7b3;
+  --nav-hover:rgba(255,231,179,.16);
+  --nav-active-bg:#fbbf24;
+  --nav-active-text:#7f1d1d;
+  --page-bg:#fff6e8;
+  --accent:#b91c1c;
+  --pattern:
+    radial-gradient(circle,rgba(217,119,6,.28) 2px,transparent 3px),
+    radial-gradient(circle,rgba(185,28,28,.12) 9px,transparent 10px);
+  --pattern-size:30px 30px,30px 30px;
+}
+
+/* Langkah 1: Melayu */
+body[data-theme="melayu"]{
+  /* Hiasan menu Melayu */
+  --nav-deco-top:url("melayu-nav-top.png") top left / 125% auto no-repeat;
+  --nav-deco-bottom:url("melayu-nav-bottom.png") bottom center / 100% auto no-repeat;
+  --nav-pad-top:250px;
+  --nav-bg:#14532d;
+  --nav-text:#d1fae5;
+  --nav-hover:rgba(209,250,229,.14);
+  --nav-active-bg:#d4a017;
+  --nav-active-text:#14341f;
+  --page-bg:#f3fbf2;
+  --accent:#166534;
+  --pattern:
+    repeating-linear-gradient(45deg,rgba(212,160,23,.30) 0 1.5px,transparent 1.5px 26px),
+    repeating-linear-gradient(-45deg,rgba(212,160,23,.30) 0 1.5px,transparent 1.5px 26px);
+  --pattern-size:auto;
+}
+
+/* Langkah 2: India */
+body[data-theme="india"]{
+  /* Hiasan menu India */
+  --nav-deco-top:url("india-nav-top.png") top left / 125% auto no-repeat;
+  --nav-deco-bottom:url("india-nav-bottom.png") bottom center / 100% auto no-repeat;
+  --nav-pad-top:250px;
+  --nav-bg:#6b21a8;
+  --nav-text:#fbe4ff;
+  --nav-hover:rgba(251,228,255,.16);
+  --nav-active-bg:#f97316;
+  --nav-active-text:#ffffff;
+  --page-bg:#fff1f8;
+  --accent:#a21caf;
+  --pattern:
+    radial-gradient(circle,rgba(249,115,22,.30) 2.5px,transparent 3px),
+    radial-gradient(circle,rgba(162,28,175,.18) 2px,transparent 2.5px);
+  --pattern-size:24px 24px,24px 24px;
+}
+
+/* Langkah 3: Kadazan Dusun */
+body[data-theme="kadazan"]{
+  /* Hiasan menu Kadazan Dusun */
+  --nav-deco-top:url("kadazan-nav-top.png") top left / 115% auto no-repeat;
+  --nav-deco-bottom:url("kadazan-nav-bottom.png") bottom center / 100% auto no-repeat;
+  --nav-pad-top:250px;
+  --nav-bg:#141414;
+  --nav-text:#f4e6c8;
+  --nav-hover:rgba(244,230,200,.14);
+  --nav-active-bg:#d4a017;
+  --nav-active-text:#2a1a05;
+  --page-bg:#fbf6ec;
+  --accent:#a16207;
+  --pattern:repeating-linear-gradient(45deg,rgba(220,38,38,.10) 0 6px,transparent 6px 18px,rgba(20,20,20,.08) 18px 22px,transparent 22px 36px);
+  --pattern-size:auto;
+}
+
+/* Aktiviti Susun Ayat (pengayaan / pemulihan): Iban */
+body[data-theme="iban"]{
+  /* Hiasan menu Iban */
+  --nav-deco-top:url("iban-nav-top.png") top left / 100% auto no-repeat;
+  --nav-deco-bottom:url("iban-nav-bottom.png") bottom center / 100% auto no-repeat;
+  --nav-pad-top:250px;
+  --nav-bg:#5b2c0d;
+  --nav-text:#f5deb3;
+  --nav-hover:rgba(245,222,179,.16);
+  --nav-active-bg:#e8c07a;
+  --nav-active-text:#3a1a06;
+  --page-bg:#faf2e6;
+  --accent:#9a3412;
+  --pattern:conic-gradient(rgba(154,52,18,.10) 25%,transparent 0 50%,rgba(154,52,18,.10) 0 75%,transparent 0);
+  --pattern-size:36px 36px;
+}
+
+/* Penutup: kembali kepada semua kaum */
+body[data-theme="penutup"]{
+  --nav-deco-top:url("penutup-nav-top.png") top center / 100% auto no-repeat;
+  --nav-deco-bottom:url("penutup-nav-bottom.png") bottom center / 100% auto no-repeat;
+  --nav-pad-top:250px;
+  --nav-bg:#14286b;
+  --nav-text:#d6e0ff;
+  --nav-hover:rgba(255,255,255,.16);
+  --nav-active-bg:#facc15;
+  --nav-active-text:#0f2a6b;
+  --page-bg:#fff6e8;
+  --accent:#1d4ed8;
+  --pattern:repeating-linear-gradient(0deg,rgba(220,38,38,.07) 0 14px,transparent 14px 28px);
+  --pattern-size:auto;
+}
+
+/* ===================================================== */
+
+body{
+  /* Tiada hiasan menu secara lalai (tema yang ada gambar menetapkannya sendiri) */
+  --nav-deco-top:none;
+  --nav-deco-bottom:none;
+  --nav-pad-top:250px;
+  /* Fon: tukar nama di sini jika mahu fon lain (mesti dimuatkan dalam <head> index.html) */
+  --font-body:"Nunito","Segoe UI",system-ui,sans-serif;
+  --font-head:"Fredoka","Baloo 2","Trebuchet MS","Segoe UI",sans-serif;
+  margin:0;
+  font-family:var(--font-body);
+  background:var(--page-bg);
+  color:#1f2937;
+  line-height:1.6;
+}
+
+/* Susun atur: menu rapat di kiri skrin, kandungan di kanan */
+.layout{
+  display:flex;
+  align-items:flex-start;
+  margin:0;
+  padding:0;
+}
+
+nav{
+  flex:0 0 240px;
+  position:sticky;
+  top:0;
+  height:100vh;
+  overflow-y:auto;
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+  background:var(--nav-deco-top), var(--nav-deco-bottom), var(--nav-bg);
+  padding:var(--nav-pad-top) 10px 14px;
+  border-radius:0;
+  box-shadow:2px 0 10px rgba(0,0,0,.18);
+}
+nav button{
+  border:0;
+  background:transparent;
+  padding:12px 14px;
+  border-radius:10px;
+  font:inherit;
+  font-weight:600;
+  color:var(--nav-text);
+  cursor:pointer;
+  text-align:left;
+  font-family:var(--font-head);
+  font-weight:500;
+  font-size:1.02rem;
+  transition:background-color .25s, color .25s;
+}
+nav button:hover{background:var(--nav-hover)}
+nav button.active{background:var(--nav-active-bg);color:var(--nav-active-text)}
+
+main{
+  flex:1;
+  min-width:0;
+  margin:0;
+  padding:0;
+}
+
+section{
+  display:none;
+  background-color:var(--page-bg);
+  background-image:var(--pattern);
+  background-size:var(--pattern-size);
+  border-radius:0;
+  padding:20px 22px;
+  min-height:100vh;
+  box-shadow:none;
+}
+section.active{display:block}
+
+h2,h3{font-family:var(--font-head);font-weight:600}
+h2{margin-top:0;color:var(--accent)}
+
+/* ===== Halaman depan Set Induksi ===== */
+[hidden]{display:none !important}
+
+#induksi,#l1,#l2,#l3,#susun,#penutup{padding:0}
+#induksi-aktiviti{padding:0;position:relative}
+
+/* ===== Latar belakang seluruh halaman aktiviti =====
+   Lapisan ini "melekat" pada skrin semasa murid skrol; kandungan bergerak di atasnya. */
+.bg-layer{
+  position:sticky;
+  top:0;
+  height:100vh;
+  height:100dvh;
+  overflow:hidden;
+  z-index:0;
+  /* Latar ringkas: krim lembut. Gambar latar hanya dipaparkan samar di atasnya. */
+  background:radial-gradient(ellipse at 50% 40%,#fffaf3 0%,#fff1e3 60%,#ffe3d3 100%);
+}
+.bg-media{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  display:block;
+  /* Kekuatan gambar latar: 0 = tiada, 1 = penuh (seperti sebelum ini). Ubah nombor ini sahaja. */
+  opacity:.2;
+}
+.bg-hp{display:none}
+.wrap.bg-content{
+  position:relative;
+  z-index:1;
+  margin:-100vh auto 0;
+  margin:-100dvh auto 0;
+}
+
+/* Label putih bulat supaya teks mudah dibaca di atas gambar */
+.pill{
+  display:inline-block;
+  background:rgba(255,255,255,.95);
+  padding:9px 24px;
+  border-radius:999px;
+  box-shadow:0 3px 10px rgba(0,0,0,.18);
+  margin:0 0 14px;
+  font-size:1em;
+  line-height:1.45;
+}
+/* Arahan di bawah tajuk menggunakan fon tajuk supaya lebih menarik */
+.pill:not(.title-pill):not(.vctl):not(.muted){font-family:var(--font-head);font-weight:500}
+.title-pill{color:var(--accent);font-size:clamp(1.6rem,1.9vw,2.2rem);padding:6px 28px;line-height:1.3;font-weight:700;
+  /* Kilauan lembut: cahaya emas melintasi tajuk setiap beberapa saat */
+  background:linear-gradient(110deg,rgba(255,255,255,.95) 38%,#ffeaa0 47%,#ffffff 50%,#ffeaa0 53%,rgba(255,255,255,.95) 62%);
+  background-size:300% 100%;
+  background-position:100% 0;
+  animation:kilau 4.5s ease-in-out infinite;
+}
+@keyframes kilau{
+  0%{background-position:100% 0}
+  50%,100%{background-position:0% 0}
+}
+@media (prefers-reduced-motion:reduce){
+  .title-pill{animation:none;background:rgba(255,255,255,.95)}
+}
+
+/* ===== Bingkai video =====
+   Jika anda buat bingkai sendiri (video-frame.png), laraskan 4 nilai di bawah
+   supaya video muat tepat dalam bahagian lutsinar bingkai. */
+.video-frame{
+  /* Diukur daripada video-frame.png (1672 x 941) */
+  /* Bingkai diregangkan sedikit (kira-kira 6%) supaya tetingkap lutsinarnya
+     tepat 16:9 dan video memenuhinya tanpa jalur hitam di tepi. */
+  --fr-t:5.8%;
+  --fr-r:2.9%;
+  --fr-b:5.8%;
+  --fr-l:2.9%;
+  --frame-ratio:1.668;
+  position:relative;
+  width:100%;
+  aspect-ratio:var(--frame-ratio);
+  margin-bottom:14px;
+}
+/* Video + kawalan: selebar yang boleh, tetapi tidak lebih tinggi daripada skrin
+   supaya video dan butang main sentiasa kelihatan tanpa skrol. */
+.vwrap{
+  width:min(100%, max(420px, calc((100vh - 310px) * 1.668)));
+  margin:0 auto 6px;
+}
+.video-frame video{
+  position:absolute;
+  top:var(--fr-t);
+  left:var(--fr-l);
+  width:calc(100% - var(--fr-l) - var(--fr-r));
+  height:calc(100% - var(--fr-t) - var(--fr-b));
+  object-fit:cover;
+  background:#000;
+  display:block;
+}
+.vctl{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  width:100%;
+  max-width:100%;
+}
+.vplay{
+  flex:0 0 auto;
+  width:48px;
+  height:48px;
+  border:0;
+  border-radius:50%;
+  background:var(--accent);
+  color:#fff;
+  font-size:1.2rem;
+  cursor:pointer;
+}
+.vplay:hover{filter:brightness(1.15)}
+.vctl{padding:8px 22px 8px 10px;margin-bottom:0}
+.vctl input[type=range]{flex:1;accent-color:var(--accent);cursor:pointer;height:26px}
+.vtime{flex:0 0 auto;font-variant-numeric:tabular-nums;color:#374151;font-weight:700;font-size:1.05em;min-width:5em;text-align:right}
+.video-frame video{cursor:pointer}
+
+.frame-img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  pointer-events:none;
+}
+/* Bingkai ringkas (digunakan jika video-frame.png belum ada) */
+.video-frame.tiada{
+  --fr-t:0%; --fr-r:0%; --fr-b:0%; --fr-l:0%;
+  border:10px solid #fbbf24;
+  outline:6px solid #991b1b;
+  border-radius:18px;
+  overflow:hidden;
+  background:#000;
+  box-shadow:0 8px 24px rgba(0,0,0,.4);
+}
+
+/* Komputer: gambar/video memenuhi seluruh tetingkap (sedikit dipangkas di tepi
+   jika bentuk tetingkap berbeza). Butang Mula sentiasa kekal di atas butang dalam gambar. */
+.hero{
+  position:relative;
+  width:100%;
+  height:100vh;
+  height:100dvh;
+  overflow:hidden;
+  container-type:size;
+}
+.hero-stage{
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:max(100cqw, calc(100cqh * 1672 / 941));
+  aspect-ratio:1672 / 941;   /* sama dengan nisbah gambar */
+  transform:translate(-50%,-50%);
+}
+.hero-bg{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+/* Butang Mula diletakkan tepat di atas butang dalam gambar (dalam peratus) */
+.hero-btn{
+  position:absolute;
+  left:39.47%;
+  top:33.16%;
+  width:23.2%;
+  height:13.8%;
+  padding:0;
+  border:0;
+  background:none;
+  cursor:pointer;
+  transition:transform .2s ease, filter .2s ease;
+  animation:denyut 2.2s ease-in-out infinite;
+}
+.hero-btn img{
+  width:100%;
+  height:100%;
+  display:block;
+  pointer-events:none;
+}
+.hero-btn:hover,
+.hero-btn:focus-visible{
+  transform:scale(1.12);
+  filter:drop-shadow(0 6px 10px rgba(0,0,0,.3)) brightness(1.08);
+  animation:none;
+  outline:none;
+}
+.hero-btn:active{transform:scale(1.04)}
+
+@keyframes denyut{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.04)}
+}
+
+/* ===== Kad, video dan soalan ===== */
+/* Saiz teks dan lebar halaman aktiviti (membesar mengikut skrin).
+   Untuk teks lebih besar/kecil, ubah font-size di bawah; semua yang lain mengikut. */
+.wrap{
+  max-width:1100px;
+  margin:0 auto;
+  padding:clamp(14px,2.2vw,34px);
+  font-size:clamp(16px, calc(10px + .55vw), 19px);
+  line-height:1.55;
+}
+.card{
+  background:#fff;
+  border-radius:20px;
+  border-top:7px solid var(--accent);
+  padding:clamp(18px,2vw,30px);
+  margin-bottom:22px;
+  box-shadow:0 3px 14px rgba(0,0,0,.12);
+}
+.card h3{margin-top:0;font-size:1.3em;line-height:1.35}
+.card label{font-weight:600}
+.muted{color:#6b7280}
+
+.btn{
+  background:var(--accent);
+  color:#fff;
+  border:0;
+  padding:14px 30px;
+  border-radius:14px;
+  font:inherit;
+  font-size:1.05em;
+  font-weight:700;
+  cursor:pointer;
+}
+.btn:hover{filter:brightness(1.1)}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+
+.row{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:10px}
+.row label{flex:1 1 200px}
+input[type=text], textarea{
+  width:100%;
+  padding:13px 16px;
+  border:2px solid #d1d5db;
+  border-radius:12px;
+  font:inherit;
+  font-weight:400;
+  margin-top:6px;
+}
+input[type=text]:focus, textarea:focus{outline:none;border-color:var(--accent)}
+textarea{resize:vertical}
+
+.fb{font-weight:700;margin:12px 0 0;font-size:1.05em}
+.fb.ok{color:#15803d}
+.fb.bad{color:#b91c1c}
+
+/* Butang Ya / Tidak */
+.yt{display:flex;gap:16px;flex-wrap:wrap;margin-top:8px}
+.yt-btn{
+  flex:1 1 160px;
+  padding:18px 26px;
+  font:inherit;
+  font-family:var(--font-head);
+  font-size:1.35em;
+  font-weight:600;
+  background:#f3f4f6;
+  color:#1f2937;
+  border:3px solid #d1d5db;
+  border-radius:16px;
+  cursor:pointer;
+  transition:transform .15s, background-color .2s, border-color .2s, color .2s;
+}
+.yt-btn:hover:not(:disabled){transform:scale(1.04);border-color:var(--accent)}
+.yt-btn.betul{background:#16a34a;border-color:#15803d;color:#fff}
+.yt-btn.salah{background:#dc2626;border-color:#b91c1c;color:#fff}
+.yt-btn:disabled{cursor:default}
+
+/* Soalan pilihan jawapan panjang (ayat penuh), disusun menegak */
+.yt.menegak{flex-direction:column}
+.yt-btn.panjang{
+  flex:none;
+  font-family:var(--font-body);
+  font-size:1.1em;
+  font-weight:700;
+  text-align:left;
+  line-height:1.45;
+  padding:16px 22px;
+}
+
+/* Teks soalan di bawah tajuk "Soalan N" */
+.soal{font-size:1.15em;font-weight:700;margin:0 0 14px}
+
+/* Setiap video + label */
+.vblok{margin-bottom:10px}
+.vlabel{font-weight:700;color:var(--accent)}
+
+/* Ikon besar betul / salah (muncul di tengah skrin sebentar) */
+.popup{
+  position:fixed;
+  inset:0;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  pointer-events:none;
+  z-index:100;
+  background:rgba(255,255,255,.35);
+}
+.popup.show{display:flex}
+.popup svg{
+  width:min(60vw,300px);
+  height:min(60vw,300px);
+  filter:drop-shadow(0 8px 18px rgba(0,0,0,.35));
+  animation:pop 1.3s ease forwards;
+}
+@keyframes pop{
+  0%{transform:scale(0);opacity:0}
+  25%{transform:scale(1.15);opacity:1}
+  40%{transform:scale(1)}
+  80%{transform:scale(1);opacity:1}
+  100%{transform:scale(1);opacity:0}
+}
+@media (prefers-reduced-motion:reduce){
+  .popup svg{animation:none}
+}
+
+.link-btn{
+  border:0;
+  background:none;
+  color:var(--accent);
+  font:inherit;
+  font-weight:600;
+  cursor:pointer;
+  padding:0;
+}
+.link-btn:hover{text-decoration:underline}
+
+@media (prefers-reduced-motion:reduce){
+  .hero-btn{animation:none;transition:none}
+}
+
+/* Telefon: menu di atas supaya muat skrin kecil */
+/* Skrin rendah: buang hiasan bawah supaya tidak bertindih dengan butang menu */
+@media (min-width:701px) and (max-height:720px){
+  nav{background:var(--nav-deco-top), var(--nav-bg)}
+}
+
+@media (max-width:700px){
+  .layout{flex-direction:column;align-items:stretch}
+  nav{
+    background:var(--nav-bg);   /* telefon: tiada hiasan, menu berada di atas */
+    flex:none;
+    width:100%;
+    height:auto;
+    z-index:10;
+    flex-direction:row;
+    overflow-x:auto;
+    overflow-y:hidden;
+    padding:8px 10px;
+  }
+  nav button{white-space:nowrap;flex:0 0 auto}
+
+  /* Telefon: guna latar menegak (induksi-bg-hp.png) jika ada */
+  .bg-pc{display:none}
+  .bg-hp{display:block}
+  .bg-layer.tiada-hp .bg-pc{display:block}
+
+  /* Telefon: tunjuk gambar penuh tanpa dipangkas */
+  .hero{height:auto;container-type:normal;aspect-ratio:1672 / 941}
+  .hero-stage{position:relative;left:0;top:0;width:100%;transform:none}
+}
+/* =====================================================
+   LANGKAH 1: SuP(KOK)
+   Gaya biru + kuning seperti halaman utama (tajuk "Jom belajar SuP (KOK)" dan butang "Mula").
+   Warna di bawah tetap (tidak ikut tema hijau Melayu).
+   ===================================================== */
+#l1{
+  --sup-biru:#1d4ed8;
+  --sup-biru-gelap:#14286b;
+  --sup-kuning:#ffd23f;
+}
+
+/* Tajuk SuP(KOK): gambar PNG lutsinar (sup-kok.png) */
+.sup-judul{
+  display:block;
+  width:min(100%,560px);
+  height:auto;
+  margin:0 0 18px;
+  filter:drop-shadow(0 6px 10px rgba(0,0,0,.18));
+}
+
+.sup-list{display:flex;flex-direction:column;gap:18px;margin-bottom:26px}
+
+/* Butang biru berkilat (butang.png) dipotong tiga: hujung kiri, tengah, hujung kanan.
+   Hujung bulat kekal bulat walaupun butang melebar; tinggi butang ditetapkan oleh --bh. */
+.sup-btn{
+  --bh:clamp(78px,8vw,100px);
+  display:flex;
+  align-items:center;
+  gap:16px;
+  width:100%;
+  height:var(--bh);
+  padding:0 calc(var(--bh) * .12);
+  border:0;
+  border-style:solid;
+  border-color:transparent;
+  border-width:0 calc(var(--bh) / 2);
+  border-image:url("butang.png") 0 224 0 224 fill / 0 calc(var(--bh) / 2) / 0 stretch;
+  background:none;
+  cursor:pointer;
+  color:#fff;
+  font-family:var(--font-head);
+  font-weight:600;
+  font-size:clamp(1.3rem,1.8vw,1.7rem);
+  text-align:left;
+  transition:transform .2s ease, filter .2s ease;
+}
+.sup-btn:hover{transform:scale(1.02);filter:brightness(1.08)}
+.sup-btn:active{transform:scale(.99)}
+.sup-btn:focus-visible{outline:4px solid #fff;outline-offset:6px}
+.sup-huruf{
+  flex:0 0 auto;
+  min-width:3.1em;
+  padding:.1em .5em;
+  border-radius:999px;
+  background:var(--sup-kuning);
+  color:var(--sup-biru-gelap);
+  font-weight:700;
+  text-align:center;
+  box-shadow:inset 0 -4px 0 rgba(217,119,6,.35);
+}
+.sup-nama{flex:1;text-shadow:0 2px 0 rgba(10,25,90,.45)}
+.sup-ikon{flex:0 0 auto;font-size:1.2em;transition:transform .3s ease}
+.sup-item.buka .sup-ikon{transform:rotate(180deg)}
+
+/* Panel penerangan: terbuka/tutup dengan lancar; setiap panel bebas daripada yang lain */
+.sup-panel{
+  display:grid;
+  grid-template-rows:0fr;
+  visibility:hidden;
+  transition:grid-template-rows .35s ease, visibility .35s;
+}
+.sup-item.buka .sup-panel{grid-template-rows:1fr;visibility:visible}
+.sup-dalam{overflow:hidden;min-height:0}
+.sup-isi{
+  margin-top:14px;
+  background:#fff;
+  border-radius:20px;
+  border-top:7px solid var(--sup-biru);
+  padding:clamp(16px,2vw,26px);
+  box-shadow:0 3px 14px rgba(0,0,0,.12);
+  font-size:1.08em;
+}
+.sup-isi p{margin:0 0 10px}
+.sup-isi p:last-child{margin-bottom:0}
+.sup-contoh{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.chip{
+  display:inline-block;
+  padding:4px 16px;
+  border-radius:999px;
+  background:#fff3c4;
+  border:2px solid #facc15;
+  color:var(--sup-biru-gelap);
+  font-weight:700;
+}
+
+/* Contoh ayat */
+.sup-ayat{border-top-color:var(--sup-biru)}
+.ayat-besar{font-size:1.35em;font-weight:700;line-height:2.1;margin:0 0 14px}
+.m{padding:2px 10px;border-radius:10px}
+.m-su{background:#fecaca}
+.m-k{background:#bfdbfe}
+.m-o{background:#bbf7d0}
+.m-ket{background:#fde68a}
+.m-p{display:inline;border-bottom:4px solid #7c3aed;padding-bottom:3px}
+.m-p2{padding:2px 10px;border-radius:10px;background:#e9d5ff}
+.sup-jadual{width:100%;border-collapse:collapse;font-size:1.05em}
+.sup-jadual th{
+  background:var(--sup-biru);
+  color:#fff;
+  font-family:var(--font-head);
+  font-weight:600;
+  text-align:left;
+  padding:10px 14px;
+}
+.sup-jadual th:first-child{border-radius:12px 0 0 0}
+.sup-jadual th:last-child{border-radius:0 12px 0 0}
+.sup-jadual td{padding:10px 14px;border-bottom:2px solid #e5e7eb;vertical-align:top}
+.sup-jadual td:first-child{font-weight:700;white-space:nowrap}
+
+@media (prefers-reduced-motion:reduce){
+  .sup-panel,.sup-ikon,.sup-btn{transition:none}
+}
+@media (max-width:700px){
+  .sup-btn{gap:10px}
+  .sup-jadual td:first-child{white-space:normal}
+}
+
+/* =====================================================
+   SET INDUKSI: butang "Teruskan ke Langkah 1" merah-emas (tema Cina)  -> butang-merah.png
+   Gambar dipotong tiga (hujung kiri, tengah, hujung kanan) supaya hujung kekal bulat.
+   ===================================================== */
+#btn-lanjut{
+  --bh:clamp(66px,6vw,84px);
+  height:var(--bh);
+  min-width:calc(var(--bh) * 2.6);
+  padding:0 calc(var(--bh) * .2);
+  border:0 solid transparent;
+  border-width:0 calc(var(--bh) / 2);
+  border-image:url("butang-merah.png") 0 224 0 224 fill / 0 calc(var(--bh) / 2) / 0 stretch;
+  border-radius:0;
+  background:none;
+  color:#fff;
+  font-family:var(--font-head);
+  font-weight:600;
+  font-size:clamp(1.3rem,1.7vw,1.6rem);
+  text-shadow:0 2px 0 rgba(90,0,0,.55);
+  white-space:nowrap;
+  cursor:pointer;
+}
+#btn-lanjut:hover{transform:scale(1.03);filter:brightness(1.08)}
+
+/* =====================================================
+   Butang biru (butang.png) untuk "Teruskan" dalam Langkah 1
+   ===================================================== */
+.btn-biru{
+  --bh:clamp(66px,6vw,84px);
+  height:var(--bh);
+  min-width:calc(var(--bh) * 2.6);
+  padding:0 calc(var(--bh) * .2);
+  border:0 solid transparent;
+  border-width:0 calc(var(--bh) / 2);
+  border-image:url("butang.png") 0 224 0 224 fill / 0 calc(var(--bh) / 2) / 0 stretch;
+  border-radius:0;
+  background:none;
+  color:#fff;
+  font-family:var(--font-head);
+  font-weight:600;
+  font-size:clamp(1.3rem,1.7vw,1.6rem);
+  text-shadow:0 2px 0 rgba(10,25,90,.5);
+  white-space:nowrap;
+  cursor:pointer;
+  transition:transform .2s ease, filter .2s ease;
+}
+.btn-biru:hover{transform:scale(1.03);filter:brightness(1.08)}
+
+/* =====================================================
+   LANGKAH 3: cari kesalahan tatabahasa
+   ===================================================== */
+.teks-kad{font-size:1.15em;line-height:2.1}
+.teks-kad p{margin:0 0 16px}
+.teks-kad p:last-child{margin-bottom:0}
+.ayat{
+  cursor:pointer;
+  border-radius:8px;
+  padding:2px 3px;
+  transition:background-color .2s, color .2s;
+  -webkit-box-decoration-break:clone;
+  box-decoration-break:clone;
+}
+.ayat:hover{background:#fde68a}
+.ayat:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.ayat.jumpa,.ayat.jumpa:hover{background:#fecaca;color:#b91c1c;font-weight:700;cursor:default}
+
+/* Langkah 3: kotak jawapan + papan skor */
+.l3-kotak{margin-bottom:14px}
+.l3-kotak label{display:block;font-weight:700;margin-bottom:2px}
+.l3-jwb.betul{border-color:#16a34a;background:#f0fdf4}
+.l3-jwb.salah{border-color:#dc2626;background:#fef2f2}
+.l3-jwb:disabled{color:#1f2937;opacity:1}
+.l3-fb-kotak{margin:6px 0 0}
+.l3-fb-kotak:empty{display:none}
+.skor-kad{text-align:center}
+.skor-besar{
+  margin:0;
+  font-family:var(--font-head);
+  font-weight:700;
+  font-size:clamp(3.5rem,9vw,6rem);
+  line-height:1.1;
+  color:var(--accent);
+}
+.skor-besar span{font-size:1.15em}
+
+/* Langkah 3: kad teks berlatar emas/kuning (cerah dan menggalakkan untuk belajar) */
+.teks-kad{
+  background:#fcd34d;
+  border-top-color:#b45309;
+  color:#3b2a05;
+}
+.teks-kad .ayat:hover{background:#f59e0b;color:#2a1a05}
+.teks-kad .ayat:focus-visible{outline-color:#7c2d12}
+.teks-kad .ayat.jumpa,.teks-kad .ayat.jumpa:hover{background:#dc2626;color:#fff}
+/* =====================================================
+   LANGKAH 1: aktiviti seret & letak (jadual SuP(KOK))
+   Perkataan sengaja tiada warna supaya murid perlu berfikir; hanya tajuk jadual berwarna.
+   ===================================================== */
+.jadual-skrol{overflow-x:auto;margin-bottom:6px}
+.jadual-susun{width:100%;min-width:560px;border-collapse:separate;border-spacing:6px;table-layout:fixed}
+.jadual-susun th{font-family:var(--font-head);font-weight:600;text-align:center;padding:10px 8px;border-radius:12px;color:#1f2937}
+.jadual-susun .h-su{background:#fecaca}
+.jadual-susun .h-p{background:#e9d5ff}
+.jadual-susun .h-k{background:#bfdbfe}
+.jadual-susun .h-o{background:#bbf7d0}
+.jadual-susun .h-ket{background:#fde68a}
+.jadual-susun .drop{
+  height:68px;
+  text-align:center;
+  vertical-align:middle;
+  background:#f9fafb;
+  border:3px dashed #cbd5e1;
+  border-radius:14px;
+  transition:background-color .15s,border-color .15s;
+}
+.jadual-susun .drop.atas{background:#eff6ff;border-color:var(--sup-biru,#1d4ed8)}
+.jadual-susun .drop.penuh{border-style:solid;border-color:transparent;background:transparent}
+.jadual-susun .drop:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.jadual-susun .drop.goncang{animation:goncang .4s}
+@keyframes goncang{0%,100%{transform:translateX(0)}25%{transform:translateX(-7px)}75%{transform:translateX(7px)}}
+
+/* Ayat penuh muncul di bawah baris yang lengkap */
+.jadual-susun .ayat-penuh td{
+  background:#fffbeb;
+  border:3px solid #facc15;
+  border-radius:14px;
+  padding:10px 16px;
+  text-align:center;
+  font-size:1.25em;
+  font-weight:700;
+  line-height:2;
+  animation:muncul .5s ease;
+}
+@keyframes muncul{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+
+/* Perkataan terapung */
+.kolam-kata{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:16px 20px;
+  margin-top:14px;
+  padding:22px 14px;
+  border-radius:18px;
+  background:linear-gradient(180deg,#eff6ff,#f5f3ff);
+  min-height:90px;
+}
+.wchip{
+  display:inline-block;
+  padding:8px 20px;
+  border-radius:999px;
+  background:#fff;
+  border:3px solid #cbd5e1;
+  color:#1f2937;
+  font-weight:700;
+  font-size:1.15em;
+  cursor:grab;
+  user-select:none;
+  -webkit-user-select:none;
+  touch-action:none;
+  box-shadow:0 3px 8px rgba(0,0,0,.18);
+  animation:apung 3.2s ease-in-out infinite;
+  transition:box-shadow .15s;
+}
+.kolam-kata .wchip:nth-child(2n){animation-duration:3.8s;animation-delay:-1.1s}
+.kolam-kata .wchip:nth-child(3n){animation-duration:2.9s;animation-delay:-2s}
+@keyframes apung{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.wchip:hover{box-shadow:0 6px 14px rgba(0,0,0,.28)}
+.wchip:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wchip.dipilih{outline:4px solid var(--accent);outline-offset:3px}
+.wchip.diseret{opacity:.3}
+.wchip.hantu{position:fixed;z-index:200;pointer-events:none;animation:none;cursor:grabbing;box-shadow:0 10px 22px rgba(0,0,0,.35);transform:scale(1.08)}
+.wchip.letak{animation:none;background:#f3f4f6;cursor:default;box-shadow:none;margin:0;font-size:1.05em;touch-action:auto}
+@media (prefers-reduced-motion:reduce){.wchip{animation:none}.jadual-susun .ayat-penuh td{animation:none}}
+
+.susun-kad h3{margin:0 0 10px;color:var(--accent)}
+
+/* =====================================================
+   LANGKAH 2: Jom Bina Ayat (Susun Atur 2 Kolum + Tab Aktiviti)
+   ===================================================== */
+#l2 .l2-wrap{
+  max-width:1340px;
+}
+
+/* Susun atur 2 kolum di komputer: gambar melekat (sticky) di kiri, ruang menulis di kanan */
+#l2 .l2-grid{
+  display:grid;
+  grid-template-columns:minmax(320px, 1.05fr) minmax(360px, 1fr);
+  gap:24px;
+  align-items:start;
+}
+#l2 .l2-kol-gambar{
+  position:sticky;
+  top:20px;
+}
+#l2 .l2-kol-aktiviti{
+  min-width:0;
+}
+
+#l2 .gambar-kad{
+  padding:14px;
+  text-align:center;
+  margin-bottom:0;
+  border-top:7px solid #f97316;
+  box-shadow:0 6px 20px rgba(107,33,168,.14);
+}
+#l2 .gambar-l2{
+  display:block;
+  width:100%;
+  max-height:calc(100vh - 135px);
+  object-fit:contain;
+  border-radius:14px;
+  cursor:zoom-in;
+  background:#fffaf5;
+}
+#l2 .l2-gambar-bar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:10px;
+  text-align:left;
+}
+#l2 .gambar-nota{
+  margin:0;
+  font-size:.92em;
+}
+#l2 .l2-zum-btn{
+  border:2px solid #f97316;
+  background:#fff7ed;
+  color:#9a3412;
+  font-family:var(--font-head);
+  font-weight:600;
+  font-size:.9em;
+  padding:6px 14px;
+  border-radius:999px;
+  cursor:pointer;
+  box-shadow:0 2px 5px rgba(0,0,0,.08);
+  transition:transform .15s ease, background-color .15s ease;
+}
+#l2 .l2-zum-btn:hover{
+  background:#ffedd5;
+  transform:translateY(-1px);
+}
+#l2 .l2-zum-btn:active{
+  transform:translateY(0);
+}
+
+/* Tab Aktiviti 1 | Aktiviti 2 | Aktiviti 3 */
+#l2 .l2-tabs{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:10px;
+  margin-bottom:14px;
+}
+#l2 .l2-tab{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:12px 14px;
+  border:3px solid #e9d5ff;
+  border-radius:16px;
+  background:rgba(255,255,255,.92);
+  color:#581c87;
+  font-family:var(--font-head);
+  font-size:1.08em;
+  font-weight:600;
+  cursor:pointer;
+  box-shadow:0 3px 8px rgba(107,33,168,.10);
+  transition:transform .16s ease, background-color .2s ease, border-color .2s ease, color .2s ease, box-shadow .2s ease;
+}
+#l2 .l2-tab:hover{
+  transform:translateY(-2px);
+  border-color:#c084fc;
+  background:#faf5ff;
+}
+#l2 .l2-tab:focus-visible{
+  outline:3px solid #f97316;
+  outline-offset:2px;
+}
+#l2 .l2-tab.active{
+  background:linear-gradient(135deg, #7e22ce, #a21caf);
+  border-color:#facc15;
+  color:#fff;
+  box-shadow:0 6px 16px rgba(162,28,175,.28);
+}
+#l2 .l2-status{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:22px;
+  height:22px;
+  border-radius:999px;
+  background:#16a34a;
+  color:#fff;
+  font-family:var(--font-body);
+  font-size:.82em;
+  font-weight:800;
+  box-shadow:0 1px 3px rgba(0,0,0,.2);
+}
+#l2 .l2-tab.active .l2-status{
+  background:#facc15;
+  color:#4c1d95;
+}
+
+/* Kad Aktiviti Membina Ayat */
+#l2 .bina-kad{
+  border-top:7px solid var(--accent);
+  box-shadow:0 6px 20px rgba(107,33,168,.12);
+  margin-bottom:18px;
+}
+#l2 .l2-kad-kepala{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-bottom:8px;
+}
+#l2 .bina-kad h3{
+  color:var(--accent);
+  margin:0;
+}
+#l2 .l2-badge{
+  display:inline-block;
+  padding:4px 12px;
+  border-radius:999px;
+  background:#fef3c7;
+  border:2px solid #f59e0b;
+  color:#92400e;
+  font-family:var(--font-head);
+  font-size:.85em;
+  font-weight:600;
+}
+#l2 .l2-arahan{
+  margin:0 0 14px;
+  color:#374151;
+}
+#l2 .l2-label-tulis{
+  display:block;
+  font-weight:700;
+  color:#4c1d95;
+  margin-bottom:4px;
+}
+#l2 .bina-ayat{
+  min-height:118px;
+  font-size:1.08em;
+  line-height:1.6;
+  border:2.5px solid #d8b4fe;
+  border-radius:14px;
+  background:#fffdfa;
+  padding:14px 16px;
+  box-shadow:inset 0 2px 5px rgba(107,33,168,.05);
+  transition:border-color .2s ease, box-shadow .2s ease;
+}
+#l2 .bina-ayat:focus{
+  border-color:#a21caf;
+  box-shadow:0 0 0 4px rgba(162,28,175,.14);
+}
+#l2 .bina-kad.kurang .bina-ayat{
+  border-color:#dc2626;
+  background:#fef2f2;
+}
+#l2 .bina-kad.ada-isi .bina-ayat{
+  border-color:#9333ea;
+}
+
+/* Bantuan SuP(KOK) boleh kembang */
+#l2 .l2-bantuan-blok{
+  margin-top:14px;
+}
+#l2 .l2-bantuan-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:9px 18px;
+  border:2px solid #f97316;
+  border-radius:999px;
+  background:#fff7ed;
+  color:#9a3412;
+  font-family:var(--font-head);
+  font-size:.98em;
+  font-weight:600;
+  cursor:pointer;
+  box-shadow:0 3px 8px rgba(249,115,22,.16);
+  transition:transform .15s ease, background-color .2s ease, box-shadow .2s ease;
+}
+#l2 .l2-bantuan-btn:hover{
+  background:#ffedd5;
+  transform:translateY(-1px);
+  box-shadow:0 4px 10px rgba(249,115,22,.24);
+}
+#l2 .l2-bantuan-btn:active{
+  transform:translateY(0);
+}
+#l2 .l2-panduan{
+  margin-top:10px;
+  padding:14px 18px;
+  border-radius:16px;
+  background:linear-gradient(180deg, #fffbeb, #fff7ed);
+  border:2px solid #fbbf24;
+  border-left:6px solid #f97316;
+  animation:muncul .28s ease;
+}
+#l2 .l2-panduan-tajuk{
+  margin:0 0 8px;
+  font-family:var(--font-head);
+  font-weight:600;
+  color:#9a3412;
+}
+#l2 .l2-panduan ul{
+  margin:0;
+  padding-left:20px;
+}
+#l2 .l2-panduan li{
+  margin-bottom:5px;
+  font-size:.96em;
+  color:#374151;
+}
+#l2 .l2-panduan li:last-child{
+  margin-bottom:0;
+}
+
+/* Senarai Semak Kendiri */
+#l2 .l2-semak-kendiri{
+  margin-top:16px;
+  padding:14px 16px;
+  border-radius:16px;
+  background:#faf5ff;
+  border:2px solid #e9d5ff;
+}
+#l2 .l2-semak-tajuk{
+  margin:0 0 10px;
+  font-family:var(--font-head);
+  font-weight:600;
+  color:#6b21a8;
+}
+#l2 .l2-cek{
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  margin-bottom:8px;
+  font-weight:600;
+  font-size:.95em;
+  color:#374151;
+  cursor:pointer;
+  line-height:1.45;
+}
+#l2 .l2-cek:last-child{
+  margin-bottom:0;
+}
+#l2 .l2-chk{
+  flex:0 0 auto;
+  width:20px;
+  height:20px;
+  margin-top:2px;
+  accent-color:#a21caf;
+  cursor:pointer;
+}
+
+/* Kad Hantar Jawapan Langkah 2 */
+#l2 #l2-hantar-kad{
+  margin-bottom:14px;
+}
+#l2 .l2-hantar-atas{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-bottom:6px;
+}
+#l2 .l2-hantar-atas h3{
+  margin:0;
+}
+#l2 .l2-progres-teks{
+  display:inline-block;
+  padding:4px 12px;
+  border-radius:999px;
+  background:#f3e8ff;
+  color:#6b21a8;
+  font-family:var(--font-head);
+  font-size:.92em;
+  font-weight:600;
+}
+#l2 .l2-hantar-nota{
+  margin:0 0 12px;
+  font-size:.95em;
+}
+#l2 #l2-hantar{
+  box-shadow:0 4px 12px rgba(162,28,175,.28);
+  transition:transform .15s ease, filter .2s ease;
+}
+#l2 #l2-hantar:hover:not(:disabled){
+  transform:translateY(-1px);
+}
+
+.zum{position:fixed;inset:0;z-index:150;background:rgba(0,0,0,.85);display:flex;align-items:center;justify-content:center;padding:16px;cursor:zoom-out}
+.zum img{max-width:100%;max-height:100%;border-radius:10px}
+
+/* Responsif Langkah 2 untuk tablet & telefon */
+@media (max-width:960px){
+  #l2 .l2-grid{
+    grid-template-columns:1fr;
+    gap:16px;
+  }
+  #l2 .l2-kol-gambar{
+    position:static;
+  }
+  #l2 .gambar-l2{
+    max-height:340px;
+  }
+}
+@media (max-width:520px){
+  #l2 .l2-tabs{
+    gap:6px;
+  }
+  #l2 .l2-tab{
+    padding:10px 8px;
+    font-size:.96em;
+  }
+}
+@media (prefers-reduced-motion:reduce){
+  #l2 .l2-panduan,#l2 .l2-tab,#l2 .l2-bantuan-btn,#l2 .l2-zum-btn{animation:none;transition:none}
+}
+
+/* =====================================================
+   AKTIVITI PENGUKUHAN: susun perkataan menjadi ayat
+   ===================================================== */
+.susun-senarai{display:flex;flex-direction:column}
+.p-kad h3{margin:0 0 12px;color:var(--accent)}
+.p-gambar{display:block;width:min(100%,420px);height:auto;margin:0 auto 16px;border-radius:16px;box-shadow:0 3px 12px rgba(0,0,0,.2)}
+.p-baris{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:6px}
+.p-slot{
+  position:relative;
+  min-width:96px;min-height:58px;
+  display:flex;align-items:center;justify-content:center;
+  padding:6px;
+  background:#f9fafb;
+  border:3px dashed #cbd5e1;
+  border-radius:14px;
+  transition:background-color .15s,border-color .15s;
+}
+.p-slot::before{content:attr(data-no);position:absolute;top:-10px;left:8px;background:#fff;border-radius:999px;padding:0 7px;font-size:.75em;font-weight:800;color:#6b7280}
+.p-slot.atas{background:#fff7ed;border-color:var(--accent)}
+.p-slot.penuh{border-style:solid;border-color:#cbd5e1;background:#fff}
+.p-slot.goncang{animation:goncang .45s}
+.p-kad.betul .p-slot{border-color:#16a34a;background:#f0fdf4}
+.p-kolam{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 18px;margin-top:14px;padding:20px 12px;border-radius:18px;background:linear-gradient(180deg,#fff7ed,#fef3c7);min-height:84px}
+.p-kolam:empty{display:none}
+.p-chip{
+  display:inline-block;padding:8px 18px;border-radius:999px;background:#fff;border:3px solid #cbd5e1;
+  color:#1f2937;font-weight:700;font-size:1.1em;cursor:grab;user-select:none;-webkit-user-select:none;
+  touch-action:none;box-shadow:0 3px 8px rgba(0,0,0,.18);
+}
+.p-kolam .p-chip{animation:apung 3.2s ease-in-out infinite}
+.p-kolam .p-chip:nth-child(2n){animation-duration:3.8s;animation-delay:-1.1s}
+.p-kolam .p-chip:nth-child(3n){animation-duration:2.9s;animation-delay:-2s}
+.p-slot .p-chip{box-shadow:none;border-width:2px;padding:6px 14px;font-size:1.02em}
+.p-chip:hover{box-shadow:0 6px 14px rgba(0,0,0,.28)}
+.p-chip:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.p-chip.dipilih{outline:4px solid var(--accent);outline-offset:3px}
+.p-chip.diseret{opacity:.3}
+.p-chip.hantu{position:fixed;z-index:200;pointer-events:none;animation:none;cursor:grabbing;box-shadow:0 10px 22px rgba(0,0,0,.35);transform:scale(1.08)}
+.p-kad.betul .p-slot .p-chip{border-color:#16a34a;background:#dcfce7;cursor:default}
+.p-ayat-betul{margin:14px 0 0;padding:12px 16px;border:3px solid #16a34a;border-radius:14px;background:#f0fdf4;font-size:1.2em;font-weight:700;line-height:1.7;text-align:center;animation:muncul .5s ease}
+.p-nota{margin:10px 0 0;color:#6b7280;font-size:.95em}
+@media (prefers-reduced-motion:reduce){.p-kolam .p-chip{animation:none}.p-ayat-betul{animation:none}}
+
+/* Butang hitam-emas (butang-hitam.png) untuk "Teruskan" di hujung Langkah 3 (tema Kadazan Dusun) */
+.btn-hitam{
+  --bh:clamp(66px,6vw,84px);
+  height:var(--bh);
+  min-width:calc(var(--bh) * 2.6);
+  padding:0 calc(var(--bh) * .2);
+  border:0 solid transparent;
+  border-width:0 calc(var(--bh) / 2);
+  border-image:url("butang-hitam.png") 0 224 0 224 fill / 0 calc(var(--bh) / 2) / 0 stretch;
+  border-radius:0;
+  background:none;
+  color:#ffe9a8;
+  font-family:var(--font-head);
+  font-weight:600;
+  font-size:clamp(1.3rem,1.7vw,1.6rem);
+  text-shadow:0 2px 0 rgba(0,0,0,.7);
+  white-space:nowrap;
+  cursor:pointer;
+  transition:transform .2s ease, filter .2s ease;
+}
+.btn-hitam:hover{transform:scale(1.03);filter:brightness(1.12)}
+
+/* Hiasan tiket di atas borang Tiket Refleksi */
+.tiket-hiasan{display:block;width:min(100%,900px);height:auto;margin:0 auto 18px;border-radius:20px;filter:drop-shadow(0 6px 12px rgba(0,0,0,.25))}
+
+/* Penutup: gambar tiket besar, boleh ditekan untuk dibesarkan lagi */
+.tiket-hiasan{width:100%;max-width:none;margin-bottom:8px;cursor:zoom-in}
+.tiket-nota{margin:0 0 14px}
+
+/* Butang ungu-oren (butang-ungu.png) untuk "Teruskan ke Langkah 3" di hujung Langkah 2 (tema India) */
+.btn-ungu{
+  --bh:clamp(66px,6vw,84px);
+  height:var(--bh);
+  min-width:calc(var(--bh) * 2.6);
+  padding:0 calc(var(--bh) * .2);
+  border:0 solid transparent;
+  border-width:0 calc(var(--bh) / 2);
+  border-image:url("butang-ungu.png") 0 224 0 224 fill / 0 calc(var(--bh) / 2) / 0 stretch;
+  border-radius:0;
+  background:none;
+  color:#fff;
+  font-family:var(--font-head);
+  font-weight:600;
+  font-size:clamp(1.3rem,1.7vw,1.6rem);
+  text-shadow:0 2px 0 rgba(40,0,70,.6);
+  white-space:nowrap;
+  cursor:pointer;
+  transition:transform .2s ease, filter .2s ease;
+}
+.btn-ungu:hover{transform:scale(1.03);filter:brightness(1.1)}
+/* Jarak bawah pill maklum balas (.fb sebelum ini menimpa margin .pill sehingga melekat pada pill seterusnya) */
+.pill.fb{margin:0 0 14px}
+
+/* =====================================================
+   Bar kemajuan di sebelah "x / y" (mengikut tema tab)
+   ===================================================== */
+.pill.progres{display:inline-flex;align-items:center;flex-wrap:wrap;gap:6px 8px}
+.pill.progres .bar{
+  position:relative;
+  display:inline-block;
+  width:clamp(120px,14vw,190px);
+  height:18px;
+  margin-left:10px;
+  border-radius:999px;
+  box-sizing:border-box;
+  vertical-align:middle;
+}
+.pill.progres .isi{
+  position:relative;
+  display:block;
+  width:0;
+  height:100%;
+  border-radius:999px;
+  transition:width .6s ease;
+}
+.pill.progres .isi.ada::after{
+  position:absolute;
+  right:-9px;
+  top:50%;
+  transform:translateY(-52%);
+  font-size:1.35em;
+  line-height:1;
+  filter:drop-shadow(0 1px 1px rgba(0,0,0,.35));
+}
+/* Langkah 3 (Kadazan Dusun): jalur tenunan merah-hitam-putih-emas, penanda padi */
+#l3 .pill.progres .bar{background:#141414;border:2px solid #d4a017}
+#l3 .pill.progres .isi{background:repeating-linear-gradient(135deg,#d4a017 0 8px,#dc2626 8px 14px,#fff7e0 14px 18px,#141414 18px 22px)}
+#l3 .pill.progres .isi.ada::after{content:"🌾"}
+/* Aktiviti Pengukuhan (Iban): corak pua kumbu terakota-indigo-krim, penanda daun */
+#susun .pill.progres .bar{background:#5b2c0d;border:2px solid #e8c07a}
+#susun .pill.progres .isi{background:repeating-linear-gradient(45deg,#c2410c 0 7px,#1f2a44 7px 12px,#f5deb3 12px 16px)}
+#susun .pill.progres .isi.ada::after{content:"🌿"}
+@media (prefers-reduced-motion:reduce){.pill.progres .isi{transition:none}}
+/* Langkah 3: kotak betulkan muncul di dalam kad teks, terus selepas perenggan */
+.teks-kad .l3-kotak{
+  margin:-4px 0 20px;
+  padding:14px 16px 12px;
+  background:#fffdf5;
+  border:3px solid #b45309;
+  border-radius:16px;
+  box-shadow:0 3px 10px rgba(91,44,13,.18);
+  line-height:1.5;
+  animation:muncul .45s ease;
+}
+.teks-kad .l3-kotak label{display:block;margin-bottom:2px;font-family:var(--font-head);font-weight:600;color:#7c2d12;font-size:1rem}
+.teks-kad .l3-kotak textarea{font-size:1rem;line-height:1.5;background:#fff}
+.teks-kad .l3-kotak .fb{font-size:.95rem}
+@media (prefers-reduced-motion:reduce){.teks-kad .l3-kotak{animation:none}}
+
+/* =====================================================
+   PENUTUP: Tiket Refleksi (borang)
+   ===================================================== */
+.tiket{
+  position:relative;
+  background:linear-gradient(180deg,#f2f9ff,#fffdf2);
+  border:5px solid #7a1f6b;
+  border-radius:30px;
+  padding:clamp(18px,2.4vw,34px);
+  margin-bottom:22px;
+  box-shadow:0 8px 24px rgba(20,40,107,.2), inset 0 0 0 4px #fff;
+}
+.tiket-tajuk{
+  display:table;margin:-12px auto 18px;
+  padding:6px 30px;
+  background:#fde68a;border:4px dashed #7a1f6b;border-radius:999px;
+  color:#5b1450;font-size:clamp(1.5rem,2.2vw,2.2rem);
+}
+.t-baris{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+.t-medan{flex:1 1 220px;font-family:var(--font-head);font-weight:600;color:#14286b;font-size:1.05em}
+.t-medan input{border-color:#7a1f6b;border-radius:999px;background:#fff;padding:10px 18px}
+.t-soalan{
+  margin-bottom:18px;padding:16px 18px 14px;border-radius:22px;border:3px solid;background:#fff;
+  transition:border-color .2s, box-shadow .2s;
+}
+.t-s1{border-color:#60a5fa}.t-s2{border-color:#fbbf24}.t-s3{border-color:#c084fc}.t-s4{border-color:#f472b6}
+.t-soalan.kurang{border-color:#dc2626;box-shadow:0 0 0 4px rgba(220,38,38,.18)}
+.t-tajuk{display:flex;gap:12px;align-items:flex-start;margin:0 0 12px;font-family:var(--font-head);font-weight:600;color:#14286b;font-size:1.12em;line-height:1.4}
+.t-no{
+  flex:0 0 auto;width:38px;height:38px;border-radius:50%;background:#9d174d;color:#fff;
+  display:inline-flex;align-items:center;justify-content:center;font-size:1.1em;box-shadow:0 2px 0 #5b1450;
+}
+.t-opsyen{
+  display:flex;align-items:center;gap:12px;margin-bottom:8px;padding:10px 16px;border-radius:999px;
+  cursor:pointer;font-weight:700;border:3px solid transparent;
+  transition:transform .15s, border-color .15s, box-shadow .15s;
+}
+.t-opsyen:hover{transform:translateX(4px)}
+.t-opsyen input{position:absolute;opacity:0;pointer-events:none}
+.t-tanda{flex:0 0 auto;width:26px;height:26px;border:3px solid #374151;border-radius:8px;background:#fff;position:relative}
+.t-opsyen input:checked + .t-tanda{background:#16a34a;border-color:#15803d}
+.t-opsyen input:checked + .t-tanda::after{content:"";position:absolute;left:6px;top:1px;width:7px;height:13px;border:solid #fff;border-width:0 4px 4px 0;transform:rotate(45deg)}
+.t-opsyen:has(input:checked){border-color:#14286b;box-shadow:0 3px 8px rgba(0,0,0,.2)}
+.t-opsyen:has(input:focus-visible){outline:3px solid var(--accent);outline-offset:2px}
+.t-emo{font-size:1.6em;line-height:1}
+.t-hijau{background:#dcfce7}.t-kuning{background:#fef9c3}.t-merah{background:#fee2e2}.t-biru{background:#dbeafe}
+.t-soalan textarea{border-width:3px;border-radius:16px;margin-top:0;background:#fffdfa}
+.t-tamat{text-align:center;border-top-color:#16a34a;animation:muncul .5s ease}
+.tiket input:disabled,.tiket textarea:disabled{opacity:1;color:#1f2937;background:#f3f4f6}
+@media (prefers-reduced-motion:reduce){.t-tamat{animation:none}.t-opsyen{transition:none}}
+/* ==============================================================
+   SuP(KOK) SOFT-GLOSS PILOT — SET INDUKSI ONLY
+   Remove this entire block to revert the design experiment.
+   No changes to activities, images, HTML, or JavaScript required.
+   ============================================================== */
+#induksi-aktiviti{
+  --gloss-red:#ba1e24;
+  --gloss-gold:#f5bb38;
+  --gloss-ink:#243047;
+}
+/* Reading cards: dimensional perimeter, calm white interior */
+#induksi-aktiviti .card{
+  position:relative;
+  background:linear-gradient(180deg,#fffefd 0%,#fff 35%,#fffaf5 100%);
+  border:1px solid #f3d9bb;
+  border-top:7px solid var(--gloss-red);
+  border-radius:24px;
+  box-shadow:0 2px 0 #fff inset,0 5px 0 rgba(175,94,31,.13),0 13px 24px rgba(100,42,18,.14);
+}
+#induksi-aktiviti .card h3{color:#9d171c}
+/* Answer choices: candy-like surface, distinct correct / incorrect feedback */
+#induksi-aktiviti .yt-btn{
+  position:relative;
+  overflow:hidden;
+  isolation:isolate;
+  background:linear-gradient(180deg,#fff 0%,#fff9f0 42%,#f7e6d8 100%);
+  color:#8e1b20;
+  border:2px solid #d9a354;
+  border-radius:999px;
+  box-shadow:inset 0 2px 0 rgba(255,255,255,.95),inset 0 -3px 0 rgba(143,63,28,.12),0 4px 0 #b98239,0 7px 12px rgba(83,43,23,.17);
+  text-shadow:0 1px 0 rgba(255,255,255,.6);
+  transition:transform .16s ease,box-shadow .16s ease,filter .16s ease;
+}
+#induksi-aktiviti .yt-btn::before{
+  content:"";position:absolute;z-index:-1;pointer-events:none;
+  left:4%;right:4%;top:5%;height:35%;border-radius:999px;
+  background:linear-gradient(180deg,rgba(255,255,255,.78),rgba(255,255,255,0));
+}
+#induksi-aktiviti .yt-btn:hover:not(:disabled){
+  transform:translateY(-2px);filter:brightness(1.03);
+  box-shadow:inset 0 2px 0 rgba(255,255,255,.95),inset 0 -3px 0 rgba(143,63,28,.12),0 6px 0 #b98239,0 10px 16px rgba(83,43,23,.2);
+}
+#induksi-aktiviti .yt-btn:active:not(:disabled){transform:translateY(3px);box-shadow:inset 0 2px 5px rgba(0,0,0,.12),0 1px 0 #b98239}
+#induksi-aktiviti .yt-btn:focus-visible{outline:3px solid #1d4ed8;outline-offset:4px}
+#induksi-aktiviti .yt-btn.betul{
+  background:linear-gradient(180deg,#76e86d 0%,#24b63d 46%,#12832d 100%);
+  border-color:#e7c46b;color:white;text-shadow:0 2px 2px rgba(0,0,0,.28);
+  box-shadow:inset 0 2px 0 rgba(255,255,255,.52),inset 0 -3px 0 rgba(0,75,19,.25),0 4px 0 #b98239,0 7px 12px rgba(26,99,38,.22);
+}
+#induksi-aktiviti .yt-btn.salah{
+  background:linear-gradient(180deg,#ffaaa0 0%,#ed4b48 48%,#b91c1c 100%);
+  border-color:#e7c46b;color:white;text-shadow:0 2px 2px rgba(0,0,0,.25);
+  box-shadow:inset 0 2px 0 rgba(255,255,255,.48),inset 0 -3px 0 rgba(106,0,0,.24),0 4px 0 #b98239,0 7px 12px rgba(135,30,30,.2);
+}
+#induksi-aktiviti .yt-btn:disabled{opacity:1;cursor:default}
+#induksi-aktiviti .yt-btn.panjang{border-radius:22px}
+#induksi-aktiviti .yt-btn.panjang::before{border-radius:18px}
+/* Answer form: recessed editable surfaces */
+#induksi-aktiviti input[type=text],#induksi-aktiviti textarea{
+  background:linear-gradient(180deg,#fff9f5,#fff 45%);
+  border:2px solid #e5bb94;border-radius:15px;
+  box-shadow:inset 0 3px 6px rgba(91,48,29,.09),0 1px 0 #fff;
+  transition:border-color .18s,box-shadow .18s;
+}
+#induksi-aktiviti input[type=text]:focus,#induksi-aktiviti textarea:focus{
+  border-color:#c77b24;
+  box-shadow:inset 0 2px 5px rgba(91,48,29,.08),0 0 0 4px rgba(245,187,56,.24);
+}
+/* Submission button only; original glossy image-based onward button remains unchanged */
+#induksi-aktiviti .btn:not(#btn-lanjut){
+  background:linear-gradient(180deg,#f15b55 0%,#c8272a 52%,#9c121d 100%);
+  border:2px solid #f5c45b;border-radius:17px;
+  box-shadow:inset 0 2px 0 rgba(255,255,255,.4),inset 0 -2px 0 rgba(91,0,0,.24),0 4px 0 #9e5c1b,0 7px 12px rgba(100,42,18,.2);
+  text-shadow:0 1px 2px rgba(0,0,0,.22);
+  transition:transform .16s,box-shadow .16s,filter .16s;
+}
+#induksi-aktiviti .btn:not(#btn-lanjut):hover:not(:disabled){transform:translateY(-2px);filter:brightness(1.05)}
+#induksi-aktiviti .btn:not(#btn-lanjut):active:not(:disabled){transform:translateY(3px);box-shadow:inset 0 2px 4px rgba(0,0,0,.15),0 1px 0 #9e5c1b}
+#induksi-aktiviti .btn:not(#btn-lanjut):disabled{opacity:.55;box-shadow:none}
+#induksi-aktiviti .btn:focus-visible{outline:3px solid #1d4ed8;outline-offset:4px}
+@media(max-width:600px){#induksi-aktiviti .yt-btn{padding:15px 18px}#induksi-aktiviti .card{border-radius:19px}}
+@media(prefers-reduced-motion:reduce){#induksi-aktiviti .yt-btn,#induksi-aktiviti .btn,#induksi-aktiviti input[type=text],#induksi-aktiviti textarea{transition:none}}
+
+/* ==============================================================
+   SuP(KOK) SOFT-GLOSS PILOT — LANGKAH 1 (MELAYU)
+   Scoped to #l1; activity logic, labels and component colours stay intact.
+   Remove this block to revert Langkah 1 alone.
+   ============================================================== */
+#l1{--l1-gold:#e5b62e;--l1-green:#14643e;--l1-dark:#0c472e}
+#l1 .susun-kad,#l1 .sup-ayat{
+  background:linear-gradient(180deg,#ffffff 0%,#fffefa 52%,#fffaf0 100%);
+  border:1px solid #eadcba;border-top:7px solid var(--l1-green);
+  border-radius:24px;
+  box-shadow:inset 0 2px 0 #fff,0 5px 0 rgba(117,88,24,.12),0 13px 25px rgba(65,73,37,.14);
+}
+#l1 .susun-kad h3,#l1 .sup-ayat h3{color:var(--l1-green)}
+/* Retain Su/P/K/O/K teaching colours; add a small dimensional highlight. */
+#l1 .jadual-susun th{
+  border:1px solid rgba(255,255,255,.7);
+  box-shadow:inset 0 2px 0 rgba(255,255,255,.68),inset 0 -3px 0 rgba(67,49,17,.07),0 3px 5px rgba(52,54,35,.08);
+}
+#l1 .jadual-susun .drop:not(.penuh){
+  background:linear-gradient(180deg,#f7f9fc,#fff);
+  box-shadow:inset 0 3px 7px rgba(33,57,66,.08),0 1px 0 rgba(255,255,255,.9);
+}
+#l1 .jadual-susun .drop.atas:not(.penuh){background:linear-gradient(180deg,#e8f7ee,#fff);box-shadow:inset 0 2px 6px rgba(24,100,64,.12),0 0 0 3px rgba(229,182,46,.18)}
+#l1 .kolam-kata{
+  background:linear-gradient(180deg,#f7fcf7,#eef7e8 100%);
+  border:1px solid #d8e7cc;
+  box-shadow:inset 0 2px 7px rgba(31,80,47,.07);
+}
+#l1 .wchip:not(.letak){
+  position:relative;
+  background:linear-gradient(180deg,#fff 0%,#fffef9 43%,#f0ebd9 100%);
+  border:2px solid #c5b581;
+  box-shadow:inset 0 2px 0 rgba(255,255,255,.98),inset 0 -3px 0 rgba(104,87,45,.1),0 4px 0 #aa995f,0 7px 12px rgba(45,65,38,.15);
+  text-shadow:0 1px 0 #fff;
+}
+#l1 .wchip:not(.letak):hover{filter:brightness(1.04);box-shadow:inset 0 2px 0 #fff,0 5px 0 #aa995f,0 10px 15px rgba(45,65,38,.2)}
+#l1 .wchip.dipilih:not(.letak){border-color:var(--l1-green);box-shadow:inset 0 2px 0 #fff,0 4px 0 #aa995f,0 0 0 3px rgba(229,182,46,.28)}
+#l1 .wchip.hantu{box-shadow:0 10px 22px rgba(0,0,0,.35)}
+#l1 .jadual-susun .ayat-penuh td{
+  background:linear-gradient(180deg,#fffdf1,#fff5ce);
+  box-shadow:inset 0 2px 0 rgba(255,255,255,.9),0 4px 10px rgba(133,97,25,.11);
+}
+/* Existing image-like accordion is already glossy: only refine the reading panel. */
+#l1 .sup-isi{
+  background:linear-gradient(180deg,#fff,#fffef8);
+  box-shadow:inset 0 2px 0 rgba(255,255,255,.9),0 5px 12px rgba(42,63,34,.08);
+}
+#l1 .sup-contoh .chip{
+  background:linear-gradient(180deg,#fffdf1,#fff0b6);
+  box-shadow:inset 0 2px 0 rgba(255,255,255,.85),0 2px 3px rgba(93,74,24,.1);
+}
+#l1 .pill:not(.fb){box-shadow:0 3px 8px rgba(50,75,43,.08)}
+@media(max-width:600px){#l1 .susun-kad,#l1 .sup-ayat{border-radius:19px}#l1 .wchip:not(.letak){padding:8px 14px}}
+@media(prefers-reduced-motion:reduce){#l1 .wchip:not(.letak){transition:none}}
+
+/* =====================================================
+   LANGKAH 2: reka bentuk semula (soft-gloss, ungu-saffron-emas)
+   Semua gaya di bawah dihadkan kepada #l2. Buang blok ini untuk kembali ke reka bentuk lama.
+   ===================================================== */
+#l2{
+  --g-ungu:#6b21a8;
+  --g-ungu2:#a21caf;
+  --g-emas:#f5bb38;
+  --g-oren:#f97316;
+}
+/* Dua lajur: gambar + semakan (kiri ~44%), penulisan (kanan ~56%) */
+#l2 .l2-grid{grid-template-columns:minmax(300px,.8fr) minmax(0,1fr);gap:26px;align-items:start}
+#l2 .l2-kol-gambar{position:sticky;top:16px;display:flex;flex-direction:column;gap:14px}
+#l2 .gambar-l2{max-height:calc(100vh - 380px);min-height:200px}
+#l2 .gambar-kad{margin-bottom:0}
+
+/* Kad: permukaan berdimensi */
+#l2 .card{
+  background:linear-gradient(180deg,#fffefe 0%,#fff 38%,#fdf7ff 100%);
+  border:1px solid #ead3f5;
+  border-top:7px solid var(--g-ungu2);
+  border-radius:24px;
+  box-shadow:0 2px 0 #fff inset,0 5px 0 rgba(107,33,168,.12),0 13px 24px rgba(76,29,149,.14);
+}
+#l2 .gambar-kad{border-top-color:var(--g-oren)}
+
+/* Tab: ungu berkilat, timbul */
+#l2 .l2-tabs{gap:12px;margin-bottom:16px}
+#l2 .l2-tab{
+  position:relative;overflow:hidden;isolation:isolate;
+  background:linear-gradient(180deg,#fff 0%,#f6ebff 45%,#e6cdfa 100%);
+  color:#581c87;
+  border:2px solid #c996ee;
+  border-radius:999px;
+  box-shadow:inset 0 2px 0 rgba(255,255,255,.95),inset 0 -3px 0 rgba(107,33,168,.14),0 4px 0 #9d5fd0,0 7px 12px rgba(76,29,149,.18);
+  text-shadow:0 1px 0 rgba(255,255,255,.6);
+}
+#l2 .l2-tab::before{content:"";position:absolute;z-index:-1;pointer-events:none;left:6%;right:6%;top:6%;height:36%;border-radius:999px;background:linear-gradient(180deg,rgba(255,255,255,.75),rgba(255,255,255,0))}
+#l2 .l2-tab:hover{transform:translateY(-2px);background:linear-gradient(180deg,#fff 0%,#f9f1ff 45%,#ecd7fc 100%);border-color:#b57ae6}
+#l2 .l2-tab:active{transform:translateY(3px);box-shadow:inset 0 2px 5px rgba(0,0,0,.14),0 1px 0 #9d5fd0}
+#l2 .l2-tab.active{
+  background:linear-gradient(180deg,#c26cf0 0%,#8e2fc7 48%,#6b21a8 100%);
+  border-color:var(--g-emas);color:#fff;text-shadow:0 2px 2px rgba(40,0,70,.4);
+  box-shadow:inset 0 2px 0 rgba(255,255,255,.45),inset 0 -3px 0 rgba(40,0,70,.25),0 4px 0 #b98239,0 8px 14px rgba(107,33,168,.3);
+}
+#l2 .l2-tab.active::before{background:linear-gradient(180deg,rgba(255,255,255,.4),rgba(255,255,255,0))}
+
+/* Kepala kad dimampatkan supaya kotak tulis menjadi tumpuan */
+#l2 .bina-kad{margin-bottom:16px}
+#l2 .bina-kad h3{font-size:1.15em;color:#7e22ce}
+#l2 .l2-arahan{margin-bottom:12px}
+#l2 .l2-label-tulis{color:#6b21a8}
+#l2 .bina-ayat{
+  min-height:170px;
+  background:linear-gradient(180deg,#fbf5ff,#fff 45%);
+  border:2px solid #cfa4f0;
+  border-radius:16px;
+  box-shadow:inset 0 3px 7px rgba(76,29,149,.10),0 1px 0 #fff;
+  font-size:1.12em;
+}
+#l2 .bina-ayat:focus{border-color:var(--g-ungu2);box-shadow:inset 0 3px 7px rgba(76,29,149,.08),0 0 0 4px rgba(162,28,175,.16)}
+
+/* Bantuan SuP(KOK): butang petunjuk kecil, emas-oren berkilat */
+#l2 .l2-bantuan-blok{margin-top:12px}
+#l2 .l2-bantuan-btn{
+  position:relative;overflow:hidden;isolation:isolate;
+  padding:7px 18px;font-size:.92em;
+  background:linear-gradient(180deg,#fff0b8 0%,#ffcf4d 48%,#f59e0b 100%);
+  color:#7c2d12;
+  border:2px solid #e0a02a;
+  border-radius:999px;
+  text-shadow:0 1px 0 rgba(255,255,255,.55);
+  box-shadow:inset 0 2px 0 rgba(255,255,255,.75),inset 0 -3px 0 rgba(180,83,9,.18),0 3px 0 #b97b1c,0 6px 10px rgba(146,64,14,.2);
+}
+#l2 .l2-bantuan-btn::before{content:"";position:absolute;z-index:-1;pointer-events:none;left:8%;right:8%;top:6%;height:38%;border-radius:999px;background:linear-gradient(180deg,rgba(255,255,255,.7),rgba(255,255,255,0))}
+#l2 .l2-bantuan-btn:hover{transform:translateY(-1px);background:linear-gradient(180deg,#fff4c9 0%,#ffd865 48%,#f7a920 100%)}
+#l2 .l2-bantuan-btn:active{transform:translateY(2px);box-shadow:inset 0 2px 4px rgba(0,0,0,.14),0 1px 0 #b97b1c}
+#l2 .l2-bantuan-btn:focus-visible{outline:3px solid #1d4ed8;outline-offset:3px}
+
+/* "Jangan lupa!": pil kecil, muncul perlahan */
+#l2 .l2-ingat{
+  display:inline-block;
+  margin:12px 0 0;
+  padding:5px 16px;
+  background:#fff8d6;
+  border:1.5px solid #e9bf45;
+  border-radius:999px;
+  color:#7c4a03;
+  font-size:.88em;
+  font-weight:700;
+  line-height:1.4;
+  box-shadow:0 2px 6px rgba(146,100,14,.15);
+  animation:l2-ingat-masuk .35s ease both;
+}
+#l2 .l2-ingat-panah::before{content:"←"}
+@keyframes l2-ingat-masuk{from{opacity:0;transform:translateX(-8px)}to{opacity:1;transform:none}}
+
+/* Senarai semak: ringkas, lavender lembut, di bawah gambar */
+#l2 .l2-semak-wadah{min-width:0}
+#l2 .l2-semak-kendiri{
+  margin:0;
+  padding:12px 16px;
+  background:linear-gradient(180deg,#fbf6ff,#f3e8ff);
+  border:1.5px solid #cfa4f0;
+  border-radius:18px;
+  box-shadow:inset 0 1px 0 #fff,0 4px 10px rgba(76,29,149,.10);
+}
+#l2 .l2-semak-tajuk{margin:0 0 8px;font-size:.98em;color:#6b21a8}
+#l2 .l2-cek{margin-bottom:6px;font-size:.88em;font-weight:600;line-height:1.4}
+#l2 .l2-chk{width:18px;height:18px;margin-top:2px}
+#l2 .l2-chk:focus-visible{outline:3px solid #1d4ed8;outline-offset:2px}
+
+/* Kad hantar: kemas */
+#l2 #l2-hantar-kad{margin-bottom:10px}
+#l2 .l2-progres-teks{background:linear-gradient(180deg,#faf2ff,#f0dcff);border:1.5px solid #cfa4f0}
+
+@media (max-width:960px){
+  #l2 .l2-grid{grid-template-columns:1fr;gap:16px}
+  #l2 .l2-kol-gambar{position:static}
+  #l2 .gambar-l2{max-height:340px}
+  #l2 .l2-ingat-panah::before{content:"↑"}
+}
+@media (max-width:520px){
+  #l2 .l2-tabs{gap:8px}
+  #l2 .bina-ayat{min-height:140px}
+}
+@media (prefers-reduced-motion:reduce){
+  #l2 .l2-ingat{animation:none}
+  #l2 .l2-tab,#l2 .l2-bantuan-btn{transition:none}
+}
+
+/* Ruang peringatan sentiasa dikhaskan supaya susun atur tidak beralih apabila ia muncul
+   (jika tidak, butang "Hantar jawapan" boleh terlari semasa murid menekannya sejurus selepas menaip). */
+#l2 .l2-ingat[hidden]{display:inline-block !important;visibility:hidden;animation:none}
+
+/* Langkah 2: penunjuk kemajuan berhampiran tab; kad hantar muncul perlahan */
+#l2 .l2-progres-baris{display:flex;justify-content:flex-end;margin-bottom:8px}
+#l2 .l2-hantar-atas{margin-bottom:6px}
+#l2 #l2-hantar-kad{animation:l2-hantar-masuk .45s ease both}
+@keyframes l2-hantar-masuk{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){#l2 #l2-hantar-kad{animation:none}}
+
+/* =====================================================
+   LANGKAH 3: panel bacaan lebih lembut, 3 keadaan ayat, kotak betulkan padat
+   ===================================================== */
+#l3 .teks-kad{
+  background:linear-gradient(180deg,#fffaf0 0%,#fdf0cd 55%,#f9e6ae 100%);
+  border:2px solid #d9a93a;
+  border-top:7px solid #a16207;
+  color:#3b2a05;
+  line-height:1.9;
+  padding:clamp(16px,1.8vw,26px);
+  box-shadow:inset 0 2px 0 rgba(255,255,255,.85),0 5px 0 rgba(161,98,7,.18),0 13px 22px rgba(91,44,13,.16);
+}
+#l3 .teks-kad p{margin:0 0 10px}
+#l3 .teks-kad > p:last-of-type{margin-bottom:0}
+/* Keadaan 1: ayat biasa (masih boleh ditekan) */
+#l3 .teks-kad .ayat{padding:1px 4px;border:2px solid transparent;border-radius:9px;transition:background-color .2s,border-color .2s,color .2s}
+#l3 .teks-kad .ayat:hover{background:rgba(245,158,11,.28);color:#2a1a05}
+/* Keadaan 2: dipilih untuk dibetulkan */
+#l3 .teks-kad .ayat.jumpa,#l3 .teks-kad .ayat.jumpa:hover{
+  background:#fee2e2;border-color:#dc2626;color:#7f1d1d;font-weight:700;cursor:default;
+}
+/* Keadaan 3: pembetulan sudah ditulis (belum tentu betul) */
+#l3 .teks-kad .ayat.jumpa.ditulis,#l3 .teks-kad .ayat.jumpa.ditulis:hover{
+  background:#fde9a8;border-color:#d99a1a;color:#5b3a05;
+}
+#l3 .teks-kad .ayat.ditulis::after{content:" ✏️";font-weight:400}
+/* Kotak betulkan: padat, krim dengan sempadan emas */
+#l3 .teks-kad .l3-kotak{
+  margin:2px 0 12px;
+  padding:9px 12px 8px;
+  background:linear-gradient(180deg,#fffdf6,#fff8e4);
+  border:2px solid #d9a93a;
+  border-radius:14px;
+  box-shadow:0 2px 6px rgba(91,44,13,.14);
+  line-height:1.4;
+}
+#l3 .teks-kad .l3-kotak label{margin:0 0 2px;font-size:.95rem;color:#7c4a03}
+#l3 .teks-kad .l3-kotak textarea{margin-top:2px;padding:8px 12px;min-height:3.6em;border-width:2px}
+/* Penunjuk kemajuan tambahan */
+#l3 .pill.progres .l3-sub{margin-left:10px;padding-left:12px;border-left:2px solid #e5d3a6;font-size:.88em;color:#6b4a0b}
+/* Kad semak muncul perlahan */
+#l3 #l3-betulkan{animation:muncul .45s ease both;padding-top:clamp(14px,1.6vw,20px);padding-bottom:clamp(14px,1.6vw,20px)}
+#l3 #l3-betulkan h3{margin-bottom:4px}
+#l3 #l3-betulkan p{margin-top:0}
+@media (prefers-reduced-motion:reduce){#l3 #l3-betulkan{animation:none}#l3 .teks-kad .ayat{transition:none}}
+
+/* =====================================================
+   LANGKAH 2: kad "Hantar jawapan" lebih padat
+   ===================================================== */
+#l2 #l2-hantar-kad{
+  display:grid;grid-template-columns:1fr auto;align-items:center;gap:4px 18px;
+  padding:14px 20px;margin-bottom:8px;
+}
+#l2 #l2-hantar-kad[hidden]{display:none !important}
+#l2 #l2-hantar-kad .l2-hantar-atas{grid-column:1;margin:0}
+#l2 #l2-hantar-kad .l2-hantar-nota{grid-column:1;margin:0;font-size:.92em}
+#l2 #l2-hantar-kad > p:has(#l2-hantar){grid-column:2;grid-row:1 / span 2;margin:0}
+#l2 #l2-hantar-kad #l2-fb,#l2 #l2-hantar-kad #l2-nota,#l2 #l2-hantar-kad #l2-lanjut{grid-column:1 / -1;margin:6px 0 0}
+#l2 #l2-hantar-kad #l2-fb:empty{display:none}
+@media (max-width:600px){
+  #l2 #l2-hantar-kad{grid-template-columns:1fr}
+  #l2 #l2-hantar-kad > p:has(#l2-hantar){grid-column:1;grid-row:auto;margin-top:6px}
+}
+
+/* =====================================================
+   BUTANG UTAMA berkilat (rujukan: butang hantar Set Induksi)
+   ===================================================== */
+#l2 #l2-hantar,#l3 #l3-semak,#susun #susun-ke-l3{
+  position:relative;overflow:hidden;isolation:isolate;
+  padding:11px 26px;
+  border-radius:17px;
+  font-family:var(--font-head);font-weight:600;font-size:1.05em;
+  transition:transform .16s,box-shadow .16s,filter .16s;
+}
+#l2 #l2-hantar::before,#l3 #l3-semak::before,#susun #susun-ke-l3::before{
+  content:"";position:absolute;z-index:-1;pointer-events:none;
+  left:5%;right:5%;top:5%;height:38%;border-radius:12px;
+  background:linear-gradient(180deg,rgba(255,255,255,.5),rgba(255,255,255,0));
+}
+/* Langkah 2: ungu dengan sempadan emas */
+#l2 #l2-hantar{
+  background:linear-gradient(180deg,#c26cf0 0%,#8e2fc7 52%,#5b1a94 100%);
+  border:2px solid #f5c45b;color:#fff;
+  text-shadow:0 1px 2px rgba(30,0,60,.4);
+  box-shadow:inset 0 2px 0 rgba(255,255,255,.4),inset 0 -2px 0 rgba(30,0,60,.26),0 4px 0 #9e5c1b,0 7px 12px rgba(76,29,149,.25);
+}
+/* Langkah 3: emas-amber dengan aksen coklat tua */
+#l3 #l3-semak{
+  background:linear-gradient(180deg,#ffe28a 0%,#f1b72c 52%,#c98310 100%);
+  border:2px solid #6b3f0a;color:#3d2204;
+  text-shadow:0 1px 0 rgba(255,255,255,.45);
+  box-shadow:inset 0 2px 0 rgba(255,255,255,.6),inset 0 -2px 0 rgba(107,63,10,.25),0 4px 0 #6b3f0a,0 7px 12px rgba(91,44,13,.25);
+}
+/* Aktiviti Pengukuhan: coklat dengan krim */
+#susun #susun-ke-l3{
+  background:linear-gradient(180deg,#b9703a 0%,#8c4a1c 52%,#5e2d0e 100%);
+  border:2px solid #e8c07a;color:#fff3dc;
+  text-shadow:0 1px 2px rgba(0,0,0,.35);
+  box-shadow:inset 0 2px 0 rgba(255,255,255,.35),inset 0 -2px 0 rgba(40,15,0,.3),0 4px 0 #3f1d08,0 7px 12px rgba(63,29,8,.28);
+}
+#l2 #l2-hantar:hover:not(:disabled),#l3 #l3-semak:hover:not(:disabled),#susun #susun-ke-l3:hover:not(:disabled){transform:translateY(-2px);filter:brightness(1.06)}
+#l2 #l2-hantar:active:not(:disabled),#l3 #l3-semak:active:not(:disabled),#susun #susun-ke-l3:active:not(:disabled){transform:translateY(3px);filter:none;box-shadow:inset 0 2px 4px rgba(0,0,0,.2),0 1px 0 #3f1d08}
+#l2 #l2-hantar:disabled,#l3 #l3-semak:disabled{opacity:.55;box-shadow:none}
+#l2 #l2-hantar:focus-visible,#l3 #l3-semak:focus-visible,#susun #susun-ke-l3:focus-visible{outline:3px solid #1d4ed8;outline-offset:4px}
+@media (prefers-reduced-motion:reduce){#l2 #l2-hantar,#l3 #l3-semak,#susun #susun-ke-l3{transition:none}}
+
+/* =====================================================
+   AKTIVITI PENGUKUHAN: imbangan visual, petak jawapan, kepingan perkataan, mesej Syabas
+   Semua gaya dihadkan kepada #susun.
+   ===================================================== */
+#susun .p-kad{padding:clamp(14px,1.6vw,22px);margin-bottom:18px}
+#susun .p-kad h3{margin:0 0 8px;font-size:1.15em}
+/* Gambar lebih kecil, kekal nisbah dan di tengah */
+#susun .p-gambar{width:min(100%,300px);margin:0 auto 12px;border-radius:14px}
+/* Petak jawapan: kelihatan terbenam dan boleh diisi */
+#susun .p-baris{gap:12px 10px;margin:4px 0 4px;padding:14px 12px 10px;border-radius:18px;background:linear-gradient(180deg,#f3e7d3,#f9f1e2);box-shadow:inset 0 3px 8px rgba(91,44,13,.16),0 1px 0 #fff}
+#susun .p-slot{
+  flex:1 1 118px;min-width:0;min-height:62px;padding:8px 6px;
+  background:linear-gradient(180deg,#e9d8bd,#f6ecd9);
+  border:2px dashed #b88a55;border-radius:14px;
+  box-shadow:inset 0 3px 6px rgba(91,44,13,.2);
+  transition:background-color .15s,border-color .15s,box-shadow .15s,transform .15s;
+}
+#susun .p-slot::before{top:-11px;left:8px;width:22px;height:22px;padding:0;display:flex;align-items:center;justify-content:center;background:#8c4a1c;color:#fff3dc;font-size:.78em;box-shadow:0 1px 0 #3f1d08}
+#susun .p-slot.atas{background:linear-gradient(180deg,#fff2cf,#ffe7a6);border-color:#c98310;border-style:solid;box-shadow:inset 0 2px 4px rgba(91,44,13,.12),0 0 0 3px rgba(233,176,60,.45);transform:scale(1.02)}
+#susun .p-slot.penuh{border-style:solid;border-color:#b88a55;background:linear-gradient(180deg,#f6ecd9,#fff9ee)}
+#susun .p-kad.betul .p-slot{border-color:#16a34a;background:linear-gradient(180deg,#e3f6e5,#f2fbf3)}
+/* Kolam perkataan */
+#susun .p-kolam{margin-top:12px;padding:16px 10px;min-height:76px;gap:12px 14px;background:linear-gradient(180deg,#fff7ea,#fbe7bd);border-radius:16px;box-shadow:inset 0 2px 5px rgba(91,44,13,.1)}
+/* Kepingan perkataan: coklat-krim, berkilat lembut dan timbul */
+#susun .p-chip{
+  position:relative;overflow:hidden;isolation:isolate;
+  max-width:100%;white-space:normal;text-align:center;line-height:1.3;
+  padding:8px 16px;font-size:1.08em;
+  background:linear-gradient(180deg,#fffdf7 0%,#fbeccb 55%,#f0d49b 100%);
+  color:#4a2508;
+  border:2px solid #b88a55;border-radius:999px;
+  text-shadow:0 1px 0 rgba(255,255,255,.55);
+  box-shadow:inset 0 2px 0 rgba(255,255,255,.85),inset 0 -2px 0 rgba(140,74,28,.16),0 3px 0 #8c4a1c,0 6px 9px rgba(63,29,8,.2);
+  transition:transform .15s,box-shadow .15s,filter .15s;
+}
+#susun .p-chip::before{content:"";position:absolute;z-index:-1;pointer-events:none;left:8%;right:8%;top:6%;height:38%;border-radius:999px;background:linear-gradient(180deg,rgba(255,255,255,.65),rgba(255,255,255,0))}
+#susun .p-chip:hover{transform:translateY(-2px);filter:brightness(1.04);box-shadow:inset 0 2px 0 rgba(255,255,255,.85),inset 0 -2px 0 rgba(140,74,28,.16),0 5px 0 #8c4a1c,0 9px 12px rgba(63,29,8,.22)}
+#susun .p-chip:active{transform:translateY(3px);box-shadow:inset 0 2px 4px rgba(0,0,0,.18),0 1px 0 #8c4a1c}
+#susun .p-chip:focus-visible{outline:3px solid #1d4ed8;outline-offset:3px}
+#susun .p-chip.dipilih{outline:3px solid #c98310;outline-offset:3px}
+#susun .p-chip.hantu{transform:scale(1.06)}
+#susun .p-slot .p-chip{padding:6px 12px;font-size:1.02em;box-shadow:inset 0 2px 0 rgba(255,255,255,.85),0 2px 0 #8c4a1c,0 4px 6px rgba(63,29,8,.18);width:100%}
+#susun .p-kad.betul .p-slot .p-chip{border-color:#16a34a;background:linear-gradient(180deg,#f4fff4,#d3f3d6);color:#14532d;box-shadow:inset 0 2px 0 rgba(255,255,255,.8),0 2px 0 #15803d}
+#susun .p-nota{margin:8px 0 0;font-size:.9em}
+#susun .p-ayat-betul{margin:10px 0 0;padding:10px 14px;font-size:1.12em}
+
+/* Mesej Syabas (tema coklat-krim) dengan butang biru sedia ada di bawahnya */
+#susun .susun-tamat{margin-top:6px;animation:muncul .45s ease both}
+#susun .susun-syabas{
+  display:flex;align-items:center;gap:14px;
+  margin:0 0 14px;padding:12px 20px;
+  background:linear-gradient(180deg,#fffaf0,#fdf0cf);
+  border:2px solid #d9a93a;border-radius:20px;
+  box-shadow:inset 0 2px 0 rgba(255,255,255,.85),0 4px 0 rgba(140,74,28,.25),0 9px 16px rgba(63,29,8,.15);
+  color:#4a2508;
+}
+#susun .susun-syabas-ikon{font-size:2rem;line-height:1}
+#susun .susun-syabas-tajuk{margin:0;font-family:var(--font-head);font-weight:600;font-size:1.2em;color:#7a3b10}
+#susun .susun-syabas-teks{margin:2px 0 0;font-size:.95em}
+#susun .susun-tamat-btn{margin:0}
+@media (max-width:600px){
+  #susun .p-slot{flex:1 1 100%}
+  #susun .p-gambar{width:min(100%,260px)}
+}
+@media (prefers-reduced-motion:reduce){#susun .susun-tamat{animation:none}#susun .p-chip,#susun .p-slot{transition:none}}
+/* =====================================================
+   Penutup: butang "Hantar tiket" - versi kecil butang biru berkilat (butang.png)
+   yang sama dengan "Teruskan ke Penutup" (.btn-biru); gaya sama, saiz lebih padat.
+   ===================================================== */
+#tiket #t-hantar{
+  --bh:clamp(50px,4.6vw,60px);
+  height:var(--bh);
+  min-width:calc(var(--bh) * 2.6);
+  padding:0 calc(var(--bh) * .2);
+  border:0 solid transparent;
+  border-width:0 calc(var(--bh) / 2);
+  border-image:url("butang.png") 0 224 0 224 fill / 0 calc(var(--bh) / 2) / 0 stretch;
+  border-radius:0;
+  background:none;
+  box-shadow:none;
+  color:#fff;
+  font-family:var(--font-head);
+  font-weight:600;
+  font-size:clamp(1.1rem,1.4vw,1.3rem);
+  text-shadow:0 2px 0 rgba(10,25,90,.5);
+  white-space:nowrap;
+  cursor:pointer;
+  transition:transform .2s ease, filter .2s ease;
+}
+#tiket #t-hantar:hover:not(:disabled){transform:scale(1.03);filter:brightness(1.08)}
+#tiket #t-hantar:active:not(:disabled){transform:scale(.98) translateY(1px)}
+#tiket #t-hantar:focus-visible{outline:3px solid #facc15;outline-offset:4px;border-radius:999px}
+#tiket #t-hantar:disabled{opacity:.5;cursor:not-allowed}
+@media (prefers-reduced-motion:reduce){#tiket #t-hantar{transition:none}#tiket #t-hantar:hover:not(:disabled),#tiket #t-hantar:active:not(:disabled){transform:none}}
+
+/* =====================================================
+   BUTANG BUNYI (muzik + kesan bunyi) - kanan atas
+   ===================================================== */
+.btn-bunyi{
+  position:fixed; top:12px; right:14px; z-index:90;
+  width:44px; height:44px; padding:0;
+  display:inline-flex; align-items:center; justify-content:center;
+  color:#fff; cursor:pointer;
+  border:2px solid #f5c542; border-radius:50%;
+  background:linear-gradient(180deg,#4f86ff 0%,#2457d6 55%,#1a3fa8 100%);
+  box-shadow:0 4px 0 #0c1a4d, 0 7px 12px rgba(0,0,0,.3), inset 0 2px 0 rgba(255,255,255,.45);
+  transition:transform .18s ease, filter .18s ease, box-shadow .18s ease;
+}
+.btn-bunyi::before{
+  content:""; position:absolute; top:3px; left:20%; width:60%; height:34%;
+  border-radius:50%; background:linear-gradient(180deg,rgba(255,255,255,.6),rgba(255,255,255,0));
+  pointer-events:none;
+}
+.btn-bunyi svg{position:relative; filter:drop-shadow(0 1px 0 rgba(10,25,90,.5))}
+.btn-bunyi .ik-senyap{display:none}
+.btn-bunyi.senyap .ik-hidup{display:none}
+.btn-bunyi.senyap .ik-senyap{display:block}
+.btn-bunyi.senyap{
+  background:linear-gradient(180deg,#9aa3b5 0%,#6b7385 55%,#4f5667 100%);
+  box-shadow:0 4px 0 #272c38, 0 7px 12px rgba(0,0,0,.3), inset 0 2px 0 rgba(255,255,255,.35);
+}
+.btn-bunyi:hover{transform:translateY(-1px) scale(1.05); filter:brightness(1.08)}
+.btn-bunyi:active{transform:translateY(3px); box-shadow:0 1px 0 #0c1a4d, 0 3px 6px rgba(0,0,0,.3), inset 0 2px 0 rgba(255,255,255,.35)}
+.btn-bunyi:focus-visible{outline:3px solid #facc15; outline-offset:3px}
+@media (max-width:700px){
+  /* Telefon: butang duduk di hujung kanan menu atas; menu diberi ruang supaya tidak bertindih */
+  .btn-bunyi{top:8px; right:8px; width:40px; height:40px}
+  nav{box-sizing:border-box;border-right:56px solid transparent}   /* ruang kosong untuk butang bunyi; menu tidak tergelincir di bawahnya */
+}
+@media (prefers-reduced-motion:reduce){
+  .btn-bunyi{transition:none}
+  .btn-bunyi:hover,.btn-bunyi:active{transform:none}
+}
+
+.vwrap:fullscreen{display:flex;flex-direction:column;justify-content:center;background:#000;padding:16px}
+
+#l3-teks{
+  -webkit-user-select:none;
+  user-select:none;
+}
